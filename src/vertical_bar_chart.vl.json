@@ -5,7 +5,7 @@
   "title": {
     "text": "GDP per capita in Egypt, 1952-2007"},
   "data": {
-    "url": "https://www.trafforddatalab.io/vega-lite_companion/data/gapminder.csv"
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
     {"filter": "datum.country == 'Egypt'"}
