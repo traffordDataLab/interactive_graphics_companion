@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@4.3.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.24.1"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+  <div id="vis"></div>
+
+  <script type="text/javascript">
+    vegaEmbed('#vis', "src/vertical_bar_chart.vl.json", {defaultStyle: true}).catch(console.warn);
+  </script>
+
+</body>
+</html>

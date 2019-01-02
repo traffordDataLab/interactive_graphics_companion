@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 300,
+  "description": "Bar chart (vertical)",
+  "title": {
+    "text": "GDP per capita in Egypt, 1952-2007"},
+  "data": {
+    "url": "https://www.trafforddatalab.io/vega-lite_companion/data/gapminder.csv"
+  },
+  "transform": [
+    {"filter": "datum.country == 'Egypt'"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "timeUnit": "year",
+        "axis": {"title": null}
+      },
+      "y": {"field": "gdpPercap", "type": "quantitative",
+        "axis": {"title": "GDP per capita ($)"}
+    },
+    "color": {"value": "#fc6721"},
+    "opacity": {"value": 0.7},
+    "tooltip": [
+      {"field": "year", "type": "temporal", "timeUnit": "year", "title": "Year"},
+      {"field": "gdpPercap", "type": "quantitative", "title": "Income", "format": "$,.0f"}
+    ]
+},
+"config": {
+  "axis": {"grid": false},
+  "style": {"cell": {"stroke": "transparent"}
+  }
+}
+  }

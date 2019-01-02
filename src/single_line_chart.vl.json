@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 300,
+  "description": "Single line chart",
+  "title": {"text": "Life expectancy in Argentina, 1952-2007"},
+  "data": {
+    "url": "https://www.trafforddatalab.io/vega-lite_companion/data/gapminder.csv"
+  },
+  "transform": [{"filter": "datum.country == 'Argentina'"}],
+  "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "timeUnit": "year", "axis": {"title": null, "grid": false}},
+    "y": {"field": "lifeExp", "type": "quantitative", "axis": {"title": "Age (years)"}},
+    "color": {"value": "#fc6721"},
+    "tooltip": [
+      {"field": "year", "type": "temporal", "timeUnit": "year", "title": "Year"},
+      {"field": "lifeExp", "type": "quantitative", "title": "Age", "format": ".1f"}
+    ]
+  },
+  "config": {"style": {"cell": {"stroke": "transparent"}}}
+}
