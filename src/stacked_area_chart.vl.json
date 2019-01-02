@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 300,
+  "width": 400,
   "description": "Stacked area chart",
   "title": {"text": "GDP per capita by country, 1952-2007", "offset": 20},
   "data": {
@@ -17,9 +17,10 @@
   "mark": "area",
   "encoding": {
     "x": {
+      "timeUnit": "year",
       "field": "year",
-      "type": "ordinal",
-      "axis": {"grid": false, "title": ""}
+      "type": "temporal",
+      "axis": {"format": "%Y", "grid": false, "title": ""}
     },
     "y": {
       "aggregate": "sum",
@@ -31,9 +32,10 @@
       "field": "country",
       "type": "nominal",
       "scale": {"scheme": "set2"},
-      "legend": {"title": null}
+      "legend": null
     },
-    "opacity": {"value": 0.7}
+    "opacity": {"value": 0.7},
+    "tooltip": [{"field": "country", "type": "nominal", "title": "Country"}]
   },
   "config": {"style": {"cell": {"stroke": "transparent"}}}
 }

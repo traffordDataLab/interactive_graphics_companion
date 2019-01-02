@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 300,
+  "width": 400,
   "description": "Bar chart (vertical)",
   "title": {
     "text": "GDP per capita in Egypt, 1952-2007"},
@@ -16,7 +16,7 @@
         "axis": {"title": null}
       },
       "y": {"field": "gdpPercap", "type": "quantitative",
-        "axis": {"title": "GDP per capita ($)"}
+        "axis": {"title": "GDP per capita ($)", "format": "$,.0f"}
     },
     "color": {"value": "#fc6721"},
     "opacity": {"value": 0.7},

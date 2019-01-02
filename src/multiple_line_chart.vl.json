@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 300,
+  "width": 400,
   "description": "Multiple line chart",
   "title": {"text": "Life expectancy in Argentina and Italy, 1952-2007"},
   "data": {

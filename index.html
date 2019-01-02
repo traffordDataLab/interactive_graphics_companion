@@ -5,14 +5,68 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc10"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.24.1"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script> vegaEmbed('#vis1', "src/single_line_chart.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+  <script> vegaEmbed('#vis2', "src/multiple_line_chart.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+  <script> vegaEmbed('#vis3', "src/vertical_bar_chart.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+  <script> vegaEmbed('#vis4', "src/slope_chart.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+  <script> vegaEmbed('#vis5', "src/stacked_area_chart.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+  <script> vegaEmbed('#vis6', "src/scatter_plot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+
 </head>
+
+<style>
+    body{
+        font-family: 'Roboto', sans-serif;
+        color: #757575;
+    }
+</style>
+
 <body>
 
-  <div id="vis"></div>
+    <h2> Change over time </h2>
+    <h3> Single line chart </h3>
+      <div>
+          <figure>
+            <div id="vis1"></div>
+          </figure>
+      </div>
 
-  <script type="text/javascript">
-    vegaEmbed('#vis', "src/stacked_area_chart.vl.json", {defaultStyle: true}).catch(console.warn);
-  </script>
+     <h3> Multiple line chart </h3>
+      <div>
+          <figure>
+            <div id="vis2"></div>
+          </figure>
+      </div>
+
+    <h3> Bar chart (vertical) </h3>
+     <div>
+         <figure>
+           <div id="vis3"></div>
+         </figure>
+     </div>
+
+     <h3> Slope chart </h3>
+      <div>
+          <figure>
+            <div id="vis4"></div>
+          </figure>
+      </div>
+
+      <h3> Stacked area chart </h3>
+       <div>
+           <figure>
+             <div id="vis5"></div>
+           </figure>
+       </div>
+
+    <h2> Correlation </h2>
+    <h3> Scatter plot </h3>
+    <div>
+        <figure>
+          <div id="vis6"></div>
+        </figure>
+    </div>
 
 </body>
 </html>
