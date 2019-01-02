@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "description": "Gapminder bubble plot",
+  "width": 400,
+  "title": {
+    "text": "Relationship between life expectancy and income, 2007",
+    "offset": 10
+  },
+  "data": {
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+  },
+  "transform": [{"filter": "datum.year == 2007"}],
+  "mark": {
+    "type": "circle",
+    "opacity": 0.8,
+    "stroke": "#ffffff",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "y": {
+      "field": "lifeExp",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis": {"title": "Age (years)"}
+    },
+    "x": {
+      "field": "gdpPercap",
+      "type": "quantitative",
+      "scale": {"type": "log", "domain": [1, 100000]},
+      "axis": {"grid": false, "title": "GDP per capita ($)", "format": "$,.0f"}
+    },
+    "size": {
+      "field": "pop",
+      "type": "quantitative",
+      "scale": {"range": [0, 5000]},
+      "legend": false
+    },
+    "color": {
+      "field": "continent",
+      "type": "nominal",
+      "scale": {"scheme": "set2"},
+      "legend": false
+    },
+    "tooltip": [
+      {"field": "country", "type": "nominal", "title": "Country"},
+      {
+        "field": "lifeExp",
+        "type": "quantitative",
+        "title": "Age",
+        "format": ".1f"
+      },
+      {
+        "field": "gdpPercap",
+        "type": "quantitative",
+        "title": "Income",
+        "format": "$,.0f"
+      },
+      {
+        "field": "pop",
+        "type": "quantitative",
+        "title": "Population",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "config": {"style": {"cell": {"stroke": "transparent"}}}
+}
