@@ -56,8 +56,8 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Magnitude
 
-- [ ] Column
-- [ ] Bar
+- [x] [Column](src/bar_vertical.vl.json)
+- [x] [Bar](src/bar_horizontal.vl.json)
 - [ ] Paired column
 - [ ] Paired bar
 - [ ] Marimekko

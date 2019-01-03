@@ -39,6 +39,7 @@
       "scale": {"range": ["#31a354", "#de2d26"]},
       "legend": {"orient": "top", "direction": "horizontal", "title": null}
     },
+    "opacity": {"value": 0.7},
     "tooltip": [
       {"field": "country", "type": "nominal", "title": "Country"},
       {
