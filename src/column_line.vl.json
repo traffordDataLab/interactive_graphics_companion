@@ -27,6 +27,7 @@
           }
         },
         "color": {"value": "#fc6721"},
+        "opacity": {"value": 0.7},
         "tooltip": [
       {"field": "year", "type": "temporal", "timeUnit": "year", "title": "Year"},
       {"field": "gdpPercap", "type": "quantitative", "title": "Income", "format": "$,.0f"}

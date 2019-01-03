@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 400,
+  "description": "Barcode chart",
+  "title": {"text": "Life expectancy by continent, 2007", "offset": 20},
+  "data": {
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+  },
+  "transform": [
+    {"filter": "datum.year == '2007'"}
+  ],
+  "mark": "tick",
+  "encoding": {
+        "x": {
+          "field": "lifeExp",
+          "type": "quantitative",
+          "scale": {"domain": [35, 85]},
+          "axis": {"title": "Age (years)", "titlePadding": 10}
+        },
+        "y": {"field": "continent", "type": "nominal", "title": null},
+        "color": {
+          "field": "lifeExp",
+          "type": "quantitative",
+          "legend": null,
+          "scale": {"scheme": "viridis", "domain": [35, 85]}
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {
+            "field": "lifeExp",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Age"
+          }
+        ]
+  },
+  "config": {
+    "axis": {"grid": false, "domainColor": "none", "ticks": null},
+    "style": {"cell": {"stroke": "transparent"}}
+  }
+}
