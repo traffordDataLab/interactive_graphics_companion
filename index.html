@@ -15,6 +15,8 @@
     <script> vegaEmbed('#bubble', "src/bubble.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bar_diverging', "src/bar_diverging.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#histogram', "src/histogram.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#boxplot', "src/boxplot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+
 
 </head>
 
@@ -210,6 +212,13 @@ body{
         <h3> Histogram </h3>
         <figure>
             <div id="histogram"></div>
+        </figure>
+    </div>
+
+    <div class="container">
+        <h3> Boxplot </h3>
+        <figure>
+            <div id="boxplot"></div>
         </figure>
     </div>
 

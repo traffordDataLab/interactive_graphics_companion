@@ -40,7 +40,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Dot plot
 - [ ] Dot strip plot
 - [ ] Barcode plot
-- [ ] Boxplot
+- [x] [Boxplot](boxplot.vl.json)
 - [ ] Violin plot
 - [ ] Population pyramid
 - [ ] Cumulative curve
