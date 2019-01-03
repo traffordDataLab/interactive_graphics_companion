@@ -2,44 +2,6 @@
 
 The Interactive Graphics Companion provides the JSON code to create different data visualisations in [Vega-Lite](https://vega.github.io/vega-lite). The visualisations are grouped according to the Financial Times' [Visual Vocabulary](http://www.ft.com/vocabulary) using data derived from [Gapminder](https://www.gapminder.org/).
 
-### Deviation
-
-- [ ] Diverging bar
-- [ ] Diverging stacked bar
-- [ ] Spine
-- [ ] Surplus/deficit filled line
-
-### Correlation
-
-- [ ] Scatterplot
-- [ ] Column + line timeline
-- [ ] Connected scatterplot
-- [ ] Bubble
-- [ ] XY heatmap
-
-### Ranking
-
-- [ ] Ordered bar
-- [ ] Ordered column
-- [ ] Ordered proportional symbol
-- [ ] Dot strip plot
-- [ ] Slope
-- [ ] Lollipop
-- [ ] Bump
-
-### Distribution
-
-- [ ] Histogram
-- [ ] Dot plot
-- [ ] Dot strip plot
-- [ ] Barcode plot
-- [ ] Boxplot
-- [ ] Violin plot
-- [ ] Population pyramid
-- [ ] Cumulative curve
-- [ ] Frequency polygons
-- [ ] Beeswarm
-
 ### Change over Time
 
 - [ ] Line
@@ -56,6 +18,41 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Vertical timeline
 - [ ] Seismogram
 - [ ] Steamgraph
+
+### Correlation
+
+- [ ] Scatterplot
+- [ ] Column + line timeline
+- [ ] Connected scatterplot
+- [ ] Bubble
+- [ ] XY heatmap
+
+### Deviation
+
+- [ ] Diverging bar
+- [ ] Diverging stacked bar
+- [ ] Spine
+- [ ] Surplus/deficit filled line
+
+### Distribution
+
+- [ ] Histogram
+- [ ] Dot plot
+- [ ] Dot strip plot
+- [ ] Barcode plot
+- [ ] Boxplot
+- [ ] Violin plot
+- [ ] Population pyramid
+- [ ] Cumulative curve
+- [ ] Frequency polygons
+- [ ] Beeswarm
+
+### Flow
+
+- [ ] Sankey
+- [ ] Waterfall
+- [ ] Chord
+- [ ] Network
 
 ### Magnitude
 
@@ -85,6 +82,16 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Venn
 - [ ] Waterfall
 
+### Ranking
+
+- [ ] Ordered bar
+- [ ] Ordered column
+- [ ] Ordered proportional symbol
+- [ ] Dot strip plot
+- [ ] Slope
+- [ ] Lollipop
+- [ ] Bump
+
 ### Spatial
 
 - [ ] Basic choropleth (rate/ratio)
@@ -95,10 +102,3 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Scaled cartogram (value)
 - [ ] Dot density
 - [ ] Heat map
-
-### Flow
-
-- [ ] Sankey
-- [ ] Waterfall
-- [ ] Chord
-- [ ] Network
