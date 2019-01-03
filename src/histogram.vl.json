@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 400,
+  "description": "Histogram",
+  "title": {"text": "Life expectancy distribution, 2007"},
+  "data": {
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+  },
+  "transform": [{"filter": {"field": "year", "equal": "2007"}}],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "lifeExp",
+      "type": "quantitative",
+      "bin": {"step": 5},
+      "scale": {"domain": [0, 100]},
+      "axis": {"grid": false, "ticks": false, "title": "Age (years)"}
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "axis": {"title": null}
+    },
+    "color": {"value": "#fc6721"},
+    "opacity": {"value": 0.7}
+  },
+  "config": {"style": {"cell": {"stroke": "transparent"}}}
+}
