@@ -41,7 +41,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Dot strip plot
 - [ ] Barcode plot
 - [x] [Boxplot](boxplot.vl.json)
-- [ ] Violin plot
+- [ ] Violin plot ([not implemented yet](https://github.com/vega/vega-lite/issues/3442))
 - [ ] Population pyramid
 - [ ] Cumulative curve
 - [ ] Frequency polygons
