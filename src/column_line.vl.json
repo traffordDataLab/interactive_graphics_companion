@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 400,
+  "description": "Column and line chart",
+  "title": {"text": "Income and life expectancy in Egypt, 1952-2007"},
+  "data": {
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+  },
+  "transform": [{"filter": "datum.country == 'Egypt'"}],
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"title": null}
+        },
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "axis": {
+            "title": "GDP per capita ($)",
+            "titlePadding": 10,
+            "format": "$,.0f"
+          }
+        },
+        "color": {"value": "#fc6721"},
+        "tooltip": [
+      {"field": "year", "type": "temporal", "timeUnit": "year", "title": "Year"},
+      {"field": "gdpPercap", "type": "quantitative", "title": "Income", "format": "$,.0f"}
+]
+      }
+    },
+    {
+      "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
+      "encoding": {
+        "x": {"timeUnit": "year", "field": "year", "type": "ordinal"},
+        "y": {
+          "field": "lifeExp",
+          "type": "quantitative",
+          "axis": {"title": "Age (years)"},
+          "scale": {"zero": false}
+        },
+        "color": {"value": "#212121"},
+        "tooltip": [
+      {"field": "year", "type": "temporal", "timeUnit": "year", "title": "Year"},
+      {"field": "lifeExp", "type": "quantitative", "title": "Age", "format": ".1f"}
+]
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {
+    "axis": {"grid": false},
+    "style": {"cell": {"stroke": "transparent"}}
+  }
+}
