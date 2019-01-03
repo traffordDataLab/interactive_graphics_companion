@@ -1,8 +1,6 @@
 # Interactive graphics companion
 
-The Interactive Graphics Companion provides the JSON code to create different data visualisations in [Vega-Lite](https://vega.github.io/vega-lite).
-
-The visualisations are grouped according to the Financial Times' [Visual Vocabulary](http://www.ft.com/vocabulary) using data derived from [Gapminder](https://www.gapminder.org/).
+The Interactive Graphics Companion provides the JSON code to create different data visualisations in [Vega-Lite](https://vega.github.io/vega-lite). The visualisations are grouped according to the Financial Times' [Visual Vocabulary](http://www.ft.com/vocabulary) using data derived from [Gapminder](https://www.gapminder.org/).
 
 ### Deviation
 
