@@ -6,7 +6,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 - [x] [Line](src/line_single.vl.json)
 - [x] [Column](src/bar_vertical.vl.json)
-- [x] [Column + line timeline](column_line.vl.json)
+- [x] [Column + line timeline](src/column_line.vl.json)
 - [x] [Slope](src/slope.vl.json)
 - [x] [Area chart](src/area.vl.json)
 - [ ] Candlestick
@@ -22,7 +22,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 ### Correlation
 
 - [x] [Scatterplot](src/scatterplot.vl.json)
-- [x] [Column + line timeline](column_line.vl.json)
+- [x] [Column + line timeline](src/column_line.vl.json)
 - [ ] Connected scatterplot
 - [x] [Bubble](src/bubble.vl.json)
 - [ ] XY heatmap
