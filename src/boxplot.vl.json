@@ -21,7 +21,8 @@
       "axis": {"title": "Age (years)"}
     },
     "color": {"field": "continent", "type": "nominal",
-    "scale": {"scheme": "set2"}}
+    "scale": {"scheme": "set2"},
+    "legend": null}
   },
   "config": {
     "axis": {"domainColor": "none"},
