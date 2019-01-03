@@ -5,7 +5,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 ### Change over Time
 
 - [x] [Line](src/line_single.vl.json)
-- [x] [Column](src/bar_vertical.vl.json)
+- [x] [Column](src/column.vl.json)
 - [x] [Column + line timeline](src/column_line.vl.json)
 - [x] [Slope](src/slope.vl.json)
 - [x] [Area chart](src/area.vl.json)
@@ -56,9 +56,9 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Magnitude
 
-- [x] [Column](src/bar_vertical.vl.json)
-- [x] [Bar](src/bar_horizontal.vl.json)
-- [ ] Paired column
+- [x] [Column](src/column.vl.json)
+- [x] [Bar](src/bar.vl.json)
+- [x] [Paired column](src/column_paired.vl.json)
 - [ ] Paired bar
 - [ ] Marimekko
 - [ ] Proportional symbol
@@ -71,7 +71,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Part-to-whole
 
-- [ ] Stacked column/bar
+- [x] [Stacked column/bar](src/column_stacked.vl.json)
 - [ ] Marimekko
 - [ ] Pie
 - [ ] Donut
