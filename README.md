@@ -4,11 +4,11 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Change over Time
 
-- [ ] Line
-- [ ] Column
+- [x] [Line](line_single.vl.json)
+- [x] [Column](bar_vertical.vl.json)
 - [ ] Column + line timeline
-- [ ] Slope
-- [ ] Area chart
+- [x] [Slope](slope.vl.json)
+- [x] [Area chart](area.vl.json)
 - [ ] Candlestick
 - [ ] Fan chart (projections)
 - [ ] Connected scatterplot
@@ -21,22 +21,22 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Correlation
 
-- [ ] Scatterplot
+- [x] [Scatterplot](scatterplot.vl.json)
 - [ ] Column + line timeline
 - [ ] Connected scatterplot
-- [ ] Bubble
+- [x] [Bubble](bubble.vl.json)
 - [ ] XY heatmap
 
 ### Deviation
 
-- [ ] Diverging bar
+- [x] [Diverging bar](bar_diverging.vl.json)
 - [ ] Diverging stacked bar
 - [ ] Spine
 - [ ] Surplus/deficit filled line
 
 ### Distribution
 
-- [ ] Histogram
+- [x] [Histogram](histogram.vl.json)
 - [ ] Dot plot
 - [ ] Dot strip plot
 - [ ] Barcode plot
