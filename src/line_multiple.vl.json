@@ -1,15 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 400,
   "description": "Multiple line chart",
-  "title": {"text": "Life expectancy in Argentina and Italy, 1952-2007"},
+  "width": 400,
+  "title": {"text": "Average life expectancy by region, 1800-2018"},
   "data": {
-    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_ilex.csv"
   },
   "transform": [
-    {"filter": {"field": "country", "oneOf": ["Argentina", "Italy"]}}
+    {"filter": {"field": "lifeExp", "valid": true}},
+    {
+      "aggregate": [{"op": "mean", "field": "lifeExp", "as": "average"}],
+      "groupby": ["region", "year"]
+    }
   ],
-  "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
+  "mark": "line",
   "encoding": {
     "x": {
       "field": "year",
@@ -17,14 +21,14 @@
       "timeUnit": "year",
       "axis": {"title": null, "grid": false}
     },
-    "y": {
-      "field": "lifeExp",
-      "type": "quantitative",
-      "axis": {"title": "Age (years)"}
+    "y": {"field": "average", "type": "quantitative", "axis": {"title": null}},
+    "color": {
+      "field": "region",
+      "type": "nominal",
+      "legend": {"orient": "bottom", "direction": "horizontal", "title": null}
     },
-    "color": {"field": "country", "type": "nominal", "legend": {"orient": "bottom", "direction": "horizontal", "title": null}},
     "tooltip": [
-      {"field": "country", "type": "nominal", "title": "Country"},
+      {"field": "region", "type": "nominal", "title": "Region"},
       {
         "field": "year",
         "type": "temporal",
@@ -32,9 +36,9 @@
         "title": "Year"
       },
       {
-        "field": "lifeExp",
+        "field": "average",
         "type": "quantitative",
-        "title": "Age",
+        "title": "Age (years)",
         "format": ".1f"
       }
     ]
