@@ -37,7 +37,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 ### Distribution
 
 - [x] [Histogram](src/histogram.vl.json)
-- [ ] Dot plot
+- [x] Dot plot(src/dot_plot.vl.json)
 - [ ] Dot strip plot
 - [x] [Barcode plot](src/barcode.vl.json)
 - [x] [Boxplot](boxplot.vl.json)

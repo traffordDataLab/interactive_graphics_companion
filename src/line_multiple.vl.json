@@ -25,6 +25,9 @@
     "color": {
       "field": "region",
       "type": "nominal",
+      "scale": {"domain": ["Africa", "Americas", "Asia", "Europe"],
+          "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
+      },
       "legend": {"orient": "bottom", "direction": "horizontal", "title": null}
     },
     "tooltip": [
