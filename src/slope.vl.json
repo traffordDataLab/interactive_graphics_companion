@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 400,
   "description": "Slope chart",
-  "title": {"text": "GDP per capita change, 1952 - 2007", "offset": 20},
+  "width": 400,
+  "title": {"text": "Change in income per person, 1952 - 2017", "offset": 20},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
     {"filter": {"field": "country", "oneOf": ["Iceland", "Norway"]}},
-    {"filter": {"field": "year", "oneOf": ["1952", "2007"]}}
+    {"filter": {"field": "year", "oneOf": ["1952", "2017"]}}
   ],
   "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
   "encoding": {
@@ -28,7 +28,7 @@
       {
         "field": "gdpPercap",
         "type": "quantitative",
-        "title": "Income",
+        "title": "GDP per capita",
         "format": "$,.0f"
       }
     ]

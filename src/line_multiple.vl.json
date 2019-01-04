@@ -28,13 +28,13 @@
       "legend": {"orient": "bottom", "direction": "horizontal", "title": null}
     },
     "tooltip": [
-      {"field": "region", "type": "nominal", "title": "Region"},
       {
         "field": "year",
         "type": "temporal",
         "timeUnit": "year",
         "title": "Year"
       },
+      {"field": "region", "type": "nominal", "title": "Region"},
       {
         "field": "average",
         "type": "quantitative",

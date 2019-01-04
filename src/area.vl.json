@@ -1,41 +1,34 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "description": "Area",
   "width": 400,
-  "description": "Stacked area chart",
-  "title": {"text": "GDP per capita by country, 1952-2007", "offset": 20},
+  "title": {"text": "Average life expectancy in Europe, 1800-2018", "offset": 20},
   "data": {
-    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_ilex.csv"
   },
   "transform": [
+    {"filter": "datum.region == 'Europe'"},
+    {"filter": {"field": "lifeExp", "valid": true}},
     {
-      "filter": {
-        "field": "country",
-        "oneOf": ["France", "Germany", "Ireland", "Italy"]
-      }
+      "aggregate": [{"op": "mean", "field": "lifeExp", "as": "average"}],
+      "groupby": ["year"]
     }
   ],
   "mark": "area",
   "encoding": {
     "x": {
-      "timeUnit": "year",
       "field": "year",
       "type": "temporal",
-      "axis": {"format": "%Y", "grid": false, "title": ""}
+      "timeUnit": "year",
+      "axis": {"format": "%Y", "grid": false, "title": "Year"}
     },
     "y": {
-      "aggregate": "sum",
-      "field": "gdpPercap",
+      "field": "average",
       "type": "quantitative",
-      "axis": {"title": "GDP per capita ($)", "format": "$,.0f"}
+      "axis": {"title": "Age (years)", "format": ",.0f"}
     },
-    "color": {
-      "field": "country",
-      "type": "nominal",
-      "scale": {"scheme": "set2"},
-      "legend": null
-    },
-    "opacity": {"value": 0.7},
-    "tooltip": [{"field": "country", "type": "nominal", "title": "Country"}]
+    "color": {"value": "#FFDC25"},
+    "opacity": {"value": 0.7}
   },
-  "config": {"style": {"cell": {"stroke": "transparent"}}}
+  "config": {"view": {"stroke": "transparent"}}
 }

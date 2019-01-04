@@ -1,27 +1,30 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 400,
   "description": "Boxplot",
-  "title": {"text": "Life expectancy distributions, 2007"},
+  "width": 400,
+  "title": {"text": "Life expectancy distributions, 2017"},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
-    {"filter": {"field": "year", "equal": "2007"}}],
+    {"filter": {"field": "year", "equal": "2017"}}],
   "mark": {
     "type": "boxplot",
     "extent": "min-max"
   },
   "encoding": {
-    "x": {"field": "continent","type": "nominal",
+    "x": {"field": "region","type": "nominal",
     "axis": {"labelAngle": 0, "title": null}},
     "y": {
       "field": "lifeExp",
       "type": "quantitative",
       "axis": {"title": "Age (years)"}
     },
-    "color": {"field": "continent", "type": "nominal",
-    "scale": {"scheme": "set2"},
+    "color": {"field": "region", "type": "nominal",
+        "scale": {
+          "domain": ["Africa", "Americas", "Asia", "Europe"],
+          "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
+        },
     "legend": null}
   },
   "config": {

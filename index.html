@@ -12,10 +12,12 @@
     <script> vegaEmbed('#column_line', "src/column_line.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#slope', "src/slope.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area', "src/area.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#area_stacked', "src/area_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#scatterplot', "src/scatterplot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bubble', "src/bubble.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bar_diverging', "src/bar_diverging.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#histogram', "src/histogram.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#dot_plot', "src/dot_plot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#barcode', "src/barcode.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#boxplot', "src/boxplot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bar', "src/bar.vl.json", {defaultStyle: true}).catch(console.warn); </script>
@@ -81,6 +83,13 @@ body{
         <h3> Area chart </h3>
         <figure>
             <div id="area"></div>
+        </figure>
+    </div>
+
+    <div class="container">
+        <h3> Area stacked </h3>
+        <figure>
+            <div id="area_stacked"></div>
         </figure>
     </div>
 
@@ -217,6 +226,13 @@ body{
         <h3> Histogram </h3>
         <figure>
             <div id="histogram"></div>
+        </figure>
+    </div>
+
+    <div class="container">
+        <h3> Dot plot </h3>
+        <figure>
+            <div id="dot_plot"></div>
         </figure>
     </div>
 

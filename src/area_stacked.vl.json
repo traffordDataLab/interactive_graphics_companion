@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 400,
+  "description": "Stacked area chart",
+  "title": {"text": "GDP per capita by country, 1952-2007", "offset": 20},
+  "data": {
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "country",
+        "oneOf": ["France", "Germany", "Ireland", "Italy"]
+      }
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "year",
+      "type": "temporal",
+      "axis": {"format": "%Y", "grid": false, "title": ""}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "gdpPercap",
+      "type": "quantitative",
+      "axis": {"title": "Income per person", "format": "$,.0f"}
+    },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "scale": {"scheme": "set2"},
+      "legend": null
+    },
+    "opacity": {"value": 0.7},
+    "tooltip": [{"field": "country", "type": "nominal", "title": "Country"}]
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}

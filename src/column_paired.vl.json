@@ -1,41 +1,47 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 400,
-  "description": "Stacked column/bar chart",
-  "title": {"text": "Total population by continent, 1952  and 2007"},
+  "description": "Paired column",
+  "width": 200,
+  "title": null,
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
-    {"filter": {"timeUnit": "year", "field": "year", "oneOf": ["1952", "2007"]}},
+    {
+      "filter": {"timeUnit": "year", "field": "year", "oneOf": ["1957", "2017"]}
+    },
     {
       "aggregate": [{"op": "sum", "field": "pop", "as": "total_pop"}],
-      "groupby": ["continent", "year"]
+      "groupby": ["region", "year"]
     }
   ],
   "mark": "bar",
   "encoding": {
     "column": {
-      "timeUnit": "year", "field": "year", "type": "ordinal",
-      "title": null
+      "field": "year",
+      "type": "temporal",
+      "timeUnit": "year",
+      "header": {"title": "Total population by region, 1957 and 2017"}
     },
     "y": {
-      "field": "total_pop", "type": "quantitative",
+      "field": "total_pop",
+      "type": "quantitative",
       "axis": {"title": null, "grid": false}
     },
-    "x": {
-      "field": "continent", "type": "nominal",
-      "axis": {"title": null}
-    },
+    "x": {"field": "region", "type": "nominal", "axis": {"title": null}},
     "color": {
-      "field": "continent", "type": "nominal",
-      "scale": {"scheme": "set2"},
+      "field": "region",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Africa", "Americas", "Asia", "Europe"],
+        "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
+      },
       "legend": null
     },
     "opacity": {"value": 0.8},
     "tooltip": [
       {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},
-      {"field": "continent", "type": "nominal", "title": "Continent"},
+      {"field": "region", "type": "nominal", "title": "Continent"},
       {
         "field": "total_pop",
         "type": "quantitative",

@@ -1,15 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 400,
-  "height": 300,
   "description": "Diverging bar chart",
-  "title": {"text": "GDP per capita, 2007", "offset": 10},
+  "width": 400, "height": 300,
+  "title": {"text": "Income per person, 2017", "offset": 10},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
-    {"filter": {"field": "year", "equal": "2007"}},
-    {"filter": {"field": "continent", "equal": "Europe"}},
+    {"filter": {"field": "year", "equal": "2017"}},
+    {"filter": {"field": "region", "equal": "Europe"}},
     {
       "window": [{"op": "median", "field": "gdpPercap", "as": "median"}],
       "frame": [null, null]
@@ -31,7 +30,7 @@
     "x": {
       "field": "diff",
       "type": "quantitative",
-      "axis": {"ticks": false, "title": "GDP per capita ($)", "format": "$,.0f"}
+      "axis": {"ticks": false, "title": "Income per person", "format": "$,.0f"}
     },
     "color": {
       "field": "type",
@@ -45,7 +44,7 @@
       {
         "field": "gdpPercap",
         "type": "quantitative",
-        "title": "Income",
+        "title": "GDP per capita",
         "format": "$,.0f"
       },
       {
