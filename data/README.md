@@ -1,0 +1,1 @@
+Demographic data from [Gapminder.org](https://www.gapminder.org/data/) and geospatial data from [Natural Earth](https://www.naturalearthdata.com) are provided under a [Creative Common Attribution License 4.0](https://creativecommons.org/licenses/by/4.0/).
