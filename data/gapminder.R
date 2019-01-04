@@ -6,7 +6,9 @@
 
 library(tidyverse) ; library(readxl)
 
-# Geographical data
+# World Health Chart data ---------------------------
+
+# Geographies
 # https://www.gapminder.org/data/geo/
 download.file("http://gapm.io/dl_geo", destfile = "Data Geographies - v1 - by Gapminder.xlsx")
 countries <- read_xlsx("Data Geographies - v1 - by Gapminder.xlsx", sheet = 2) %>% 
@@ -47,3 +49,11 @@ left_join(lifeExp, gdpPercap, by = "join") %>%
   left_join(., countries, by = "country") %>% 
   select(country, region, country_code, year, lifeExp, gdpPercap, pop) %>% 
   write_csv("gapminder.csv")
+
+# Life expectancy ---------------------------
+# http://gapm.io/ilex
+read_csv("life_expectancy_years.csv") %>% 
+  gather(year, lifeExp, -country) %>% 
+  left_join(., countries, by = "country") %>% 
+  select(country, region, year, lifeExp) %>% 
+  write_csv("gapminder_ilex.csv")
