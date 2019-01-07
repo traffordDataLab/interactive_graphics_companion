@@ -2,11 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Bar chart (vertical)",
   "width": 400,
-  "title": {"text": "GDP per capita in Egypt, 1952-2017"},
+  "title": {"text": "Afghanistan's population, 1952-2017"},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
-  "transform": [{"filter": "datum.country == 'Egypt'"}],
+  "transform": [{"filter": {"field": "country", "equal": "Afghanistan"}}],
   "mark": "bar",
   "encoding": {
     "x": {
@@ -16,9 +16,9 @@
       "axis": {"title": null}
     },
     "y": {
-      "field": "gdpPercap",
+      "field": "pop",
       "type": "quantitative",
-      "axis": {"title": "Income per person", "format": "$,.0f"}
+      "axis": {"title": null, "format": ",.0f"}
     },
     "color": {"value": "#fc6721"},
     "opacity": {"value": 0.7},
@@ -30,10 +30,10 @@
         "title": "Year"
       },
       {
-        "field": "gdpPercap",
+        "field": "pop",
         "type": "quantitative",
-        "title": "GDP per capita",
-        "format": "$,.0f"
+        "title": "Population",
+        "format": ",.0f"
       }
     ]
   },

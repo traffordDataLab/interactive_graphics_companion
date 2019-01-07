@@ -7,7 +7,7 @@
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
-    {"filter": "datum.year == '2017'"}
+    {"filter": {"timeUnit": "year", "field": "year", "equal": 2017}}
   ],
   "mark": "tick",
   "encoding": {

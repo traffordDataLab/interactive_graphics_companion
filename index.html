@@ -23,6 +23,7 @@
     <script> vegaEmbed('#bar', "src/bar.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column_paired', "src/column_paired.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column_stacked', "src/column_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#choropleth', "src/choropleth.vl.json", {defaultStyle: true}).catch(console.warn); </script>
 
 
 </head>
@@ -87,94 +88,17 @@ body{
     </div>
 
     <div class="container">
-        <h3> Area stacked </h3>
+        <h3> Area chart (stacked) </h3>
         <figure>
             <div id="area_stacked"></div>
         </figure>
     </div>
 
     <div class="container">
-        <h3> Candlestick </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Fan chart (projections) </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Connected scatterplot </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Calendar heatmap </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Priestley timeline </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Circle timeline </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Vertical timeline </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Seismogram </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Steamgraph </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
         <h2> Correlation </h2>
-        <h3> Scatter plot </h3>
+        <h3> Scatterplot </h3>
         <figure>
             <div id="scatterplot"></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Column and line timeline </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Connected scatterplot </h3>
-        <figure>
-            <div id=""></div>
         </figure>
     </div>
 
@@ -186,38 +110,10 @@ body{
     </div>
 
     <div class="container">
-        <h3> XY heatmap </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
         <h2> Deviation </h2>
         <h3> Diverging bar </h3>
         <figure>
             <div id="bar_diverging"></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Diverging stacked bar </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Spine </h3>
-        <figure>
-            <div id=""></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Surplus/deficit filled line </h3>
-        <figure>
-            <div id=""></div>
         </figure>
     </div>
 
@@ -251,7 +147,7 @@ body{
     </div>
 
     <div class="container">
-        <h2> Ranking </h2>
+        <h2> Magnitude </h2>
         <h3> Bar </h3>
         <figure>
             <div id="bar"></div>
@@ -270,6 +166,14 @@ body{
         <h3> Stacked column/bar </h3>
         <figure>
             <div id="column_stacked"></div>
+        </figure>
+    </div>
+
+    <div class="container">
+        <h2> Spatial </h2>
+        <h3> Basic choropleth (rate/ratio) </h3>
+        <figure>
+            <div id="choropleth"></div>
         </figure>
     </div>
 

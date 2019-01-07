@@ -7,14 +7,14 @@
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_ilex.csv"
   },
   "transform": [
-    {"filter": "datum.region == 'Europe'"},
+    {"filter": {"field": "region", "equal": "Europe"}},
     {"filter": {"field": "lifeExp", "valid": true}},
     {
       "aggregate": [{"op": "mean", "field": "lifeExp", "as": "average"}],
       "groupby": ["year"]
     }
   ],
-  "mark": "area",
+  "mark": {"type": "area", "line": true},
   "encoding": {
     "x": {
       "field": "year",
