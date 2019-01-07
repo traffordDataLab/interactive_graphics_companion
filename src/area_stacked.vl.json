@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 400,
+  "width": 500,
   "description": "Stacked area chart",
   "title": {"text": "GDP per capita by country, 1952-2007", "offset": 20},
   "data": {

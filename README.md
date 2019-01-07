@@ -95,7 +95,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 ### Spatial
 
 - [x] [Basic choropleth (rate/ratio)](src/choropleth.vl.json)
-- [ ] Proportional symbol (count/magnitde)
+- [x] (Proportional symbol (count/magnitude)](src/proportional_symbol.vl.json)
 - [ ] Flow map
 - [ ] Contour map
 - [ ] Equalised cartogram

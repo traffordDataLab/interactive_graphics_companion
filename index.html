@@ -24,6 +24,7 @@
     <script> vegaEmbed('#column_paired', "src/column_paired.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column_stacked', "src/column_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#choropleth', "src/choropleth.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#proportional_symbol', "src/proportional_symbol.vl.json", {defaultStyle: true}).catch(console.warn); </script>
 
 
 </head>
@@ -174,6 +175,13 @@ body{
         <h3> Basic choropleth (rate/ratio) </h3>
         <figure>
             <div id="choropleth"></div>
+        </figure>
+    </div>
+
+    <div class="container">
+        <h3> Proportional symbol (count/magnitude) </h3>
+        <figure>
+            <div id="proportional_symbol"></div>
         </figure>
     </div>
 
