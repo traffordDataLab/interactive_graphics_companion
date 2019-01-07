@@ -50,10 +50,19 @@ left_join(lifeExp, gdpPercap, by = "join") %>%
   select(country, region, country_code, year, lifeExp, gdpPercap, pop) %>% 
   write_csv("gapminder.csv")
 
-# Life expectancy ---------------------------
+# Historic life expectancy ---------------------------
 # http://gapm.io/ilex
 read_csv("life_expectancy_years.csv") %>% 
   gather(year, lifeExp, -country) %>% 
   left_join(., countries, by = "country") %>% 
   select(country, region, year, lifeExp) %>% 
   write_csv("gapminder_ilex.csv")
+
+# Historic population ---------------------------
+# http://gapm.io/dpop
+read_csv("population_total.csv") %>% 
+  gather(year, pop, -country) %>% 
+  left_join(., countries, by = "country") %>% 
+  select(country, region, year, pop) %>%
+  write_csv("gapminder_dpop.csv")
+
