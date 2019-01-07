@@ -23,5 +23,5 @@ st_read("ne_110m_admin_0_countries.shp") %>%
   filter(country != "Antarctica") %>% 
   st_centroid(.) %>% 
   cbind(st_coordinates(.)) %>% 
-  rename(centroid_lon = X, centroid_lat = Y) %>% 
+  rename(lon = X, lat = Y) %>% 
   st_write("countries_centroids.geojson")
