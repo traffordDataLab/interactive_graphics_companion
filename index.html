@@ -9,6 +9,7 @@
     <script> vegaEmbed('#line_single', "src/line_single.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#line_multiple', "src/line_multiple.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column', "src/column.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#steamgraph', "src/steamgraph.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#slope', "src/slope.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area', "src/area.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area_stacked', "src/area_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
@@ -45,7 +46,7 @@ body{
 
 figcaption {
     text-align: center;
-    font-size: 10
+    font-size: 8
 }
 
 </style>
@@ -89,6 +90,14 @@ figcaption {
     <div class="container">
         <figure>
             <div id="area_stacked"></div>
+            <figcaption>Source: Gapminder</figcaption>
+        </figure>
+    </div>
+
+    <h3> Steamgraph </h3>
+    <div class="container">
+        <figure>
+            <div id="steamgraph"></div>
             <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>

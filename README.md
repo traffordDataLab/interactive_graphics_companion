@@ -17,7 +17,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Circle timeline
 - [ ] Vertical timeline
 - [ ] Seismogram
-- [ ] Steamgraph
+- [x] [Steamgraph](src/steamgraph.vl.json)
 
 ### Correlation
 
