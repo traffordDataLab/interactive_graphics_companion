@@ -6,7 +6,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 - [x] [Line](src/line_single.vl.json)
 - [x] [Column](src/column.vl.json)
-- [x] [Column + line timeline](src/column_line.vl.json)
+- [ ] Column + line timeline
 - [x] [Slope](src/slope.vl.json)
 - [x] [Area chart](src/area.vl.json)
 - [ ] Candlestick
@@ -22,7 +22,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 ### Correlation
 
 - [x] [Scatterplot](src/scatterplot.vl.json)
-- [x] [Column + line timeline](src/column_line.vl.json)
+- [ ] Column + line timeline
 - [ ] Connected scatterplot
 - [x] [Bubble](src/bubble.vl.json)
 - [ ] XY heatmap
@@ -84,18 +84,18 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Ranking
 
-- [ ] Ordered bar
+- [x] [Ordered bar](src/bar.vl.json)
 - [ ] Ordered column
 - [ ] Ordered proportional symbol
 - [ ] Dot strip plot
-- [ ] Slope
+- [x] [Slope](src/slope.vl.json)
 - [ ] Lollipop
 - [ ] Bump
 
 ### Spatial
 
 - [x] [Basic choropleth (rate/ratio)](src/choropleth.vl.json)
-- [x] (Proportional symbol (count/magnitude)](src/proportional_symbol.vl.json)
+- [x] [Proportional symbol (count/magnitude)](src/proportional_symbol.vl.json)
 - [ ] Flow map
 - [ ] Contour map
 - [ ] Equalised cartogram

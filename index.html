@@ -9,7 +9,6 @@
     <script> vegaEmbed('#line_single', "src/line_single.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#line_multiple', "src/line_multiple.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column', "src/column.vl.json", {defaultStyle: true}).catch(console.warn); </script>
-    <script> vegaEmbed('#column_line', "src/column_line.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#slope', "src/slope.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area', "src/area.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area_stacked', "src/area_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
@@ -21,6 +20,7 @@
     <script> vegaEmbed('#barcode', "src/barcode.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#boxplot', "src/boxplot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bar', "src/bar.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#bar_labels', "src/bar_labels.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column_paired', "src/column_paired.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#column_stacked', "src/column_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#choropleth', "src/choropleth.vl.json", {defaultStyle: true}).catch(console.warn); </script>
@@ -34,154 +34,181 @@
 body{
     font-family: 'Roboto', sans-serif;
     color: #757575;
+    text-align: center;
 }
 
 .container {
-    width: 50%;
-    margin: 0 auto;
+    display: inline-block;
+    margin: 5px;
+    border: 1px dotted gray;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 10
 }
 
 </style>
 
 <body>
 
+    <h2> Change over time </h2>
+    <h3> Line (single) </h3>
     <div class="container">
-        <h2> Change over time </h2>
-        <h3> Line (single) </h3>
         <figure>
             <div id="line_single"></div>
+                    <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Line (multiple) </h3>
     <div class="container">
-        <h3> Line (multiple) </h3>
         <figure>
             <div id="line_multiple"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Column </h3>
     <div class="container">
-        <h3> Column </h3>
         <figure>
             <div id="column"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Area chart </h3>
     <div class="container">
-        <h3> Column and line timeline </h3>
-        <figure>
-            <div id="column_line"></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Slope </h3>
-        <figure>
-            <div id="slope"></div>
-        </figure>
-    </div>
-
-    <div class="container">
-        <h3> Area chart </h3>
         <figure>
             <div id="area"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Area chart (stacked) </h3>
     <div class="container">
-        <h3> Area chart (stacked) </h3>
         <figure>
             <div id="area_stacked"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h2> Correlation </h2>
+    <h3> Scatterplot </h3>
     <div class="container">
-        <h2> Correlation </h2>
-        <h3> Scatterplot </h3>
         <figure>
             <div id="scatterplot"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Bubble chart </h3>
     <div class="container">
-        <h3> Bubble chart </h3>
         <figure>
             <div id="bubble"></div>
         </figure>
+    <figcaption>Source: Gapminder</figcaption>
     </div>
 
+    <h2> Deviation </h2>
+    <h3> Diverging bar </h3>
     <div class="container">
-        <h2> Deviation </h2>
-        <h3> Diverging bar </h3>
         <figure>
             <div id="bar_diverging"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h2> Distribution </h2>
+    <h3> Histogram </h3>
     <div class="container">
-        <h2> Distribution </h2>
-        <h3> Histogram </h3>
         <figure>
             <div id="histogram"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Dot plot </h3>
     <div class="container">
-        <h3> Dot plot </h3>
         <figure>
             <div id="dot_plot"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Barcode plot </h3>
     <div class="container">
-        <h3> Barcode plot </h3>
         <figure>
             <div id="barcode"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Boxplot </h3>
     <div class="container">
-        <h3> Boxplot </h3>
         <figure>
             <div id="boxplot"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h2> Magnitude </h2>
+    <h3> Bar </h3>
     <div class="container">
-        <h2> Magnitude </h2>
-        <h3> Bar </h3>
         <figure>
             <div id="bar"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Bar (labels) </h3>
     <div class="container">
-        <h3> Paired column </h3>
+        <figure>
+            <div id="bar_labels"></div>
+            <figcaption>Source: Gapminder</figcaption>
+        </figure>
+    </div>
+
+    <h3> Paired column </h3>
+    <div class="container">
         <figure>
             <div id="column_paired"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h2> Part-to-whole </h2>
+    <h3> Stacked column/bar </h3>
     <div class="container">
-        <h2> Part-to-whole </h2>
-        <h3> Stacked column/bar </h3>
         <figure>
             <div id="column_stacked"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h2> Ranking </h2>
+    <h3> Slope </h3>
     <div class="container">
-        <h2> Spatial </h2>
-        <h3> Basic choropleth (rate/ratio) </h3>
+        <figure>
+            <div id="slope"></div>
+            <figcaption>Source: Gapminder</figcaption>
+        </figure>
+    </div>
+
+    <h2> Spatial </h2>
+    <h3> Basic choropleth (rate/ratio) </h3>
+    <div class="container">
         <figure>
             <div id="choropleth"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
+    <h3> Proportional symbol (count/magnitude) </h3>
     <div class="container">
-        <h3> Proportional symbol (count/magnitude) </h3>
         <figure>
             <div id="proportional_symbol"></div>
+            <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>
 
