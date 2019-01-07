@@ -7,7 +7,7 @@
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [{"filter": {"timeUnit": "year", "field": "year", "equal": 2017}}],
-  "mark": "circle",
+  "mark": "point",
   "encoding": {
     "y": {
       "field": "lifeExp",
@@ -21,20 +21,26 @@
       "scale": {"type": "log", "domain": [1, 100000]},
       "axis": {"grid": false, "title": "Income per person", "format": "$,.0f"}
     },
-    "color": {"value": "#fc6721"},
+    "color": {"field": "region", "type": "nominal",
+    "scale": {
+      "domain": ["Africa", "Americas", "Asia", "Europe"],
+      "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
+    },
+"legend": {"orient": "top", "direction": "horizontal", "title": null}
+},
     "tooltip": [
       {"field": "country", "type": "nominal", "title": "Country"},
-      {
-        "field": "lifeExp",
-        "type": "quantitative",
-        "title": "Age (years)",
-        "format": ".1f"
-      },
       {
         "field": "gdpPercap",
         "type": "quantitative",
         "title": "GDP per capita",
         "format": "$,.0f"
+    },
+      {
+        "field": "lifeExp",
+        "type": "quantitative",
+        "title": "Age (years)",
+        "format": ".1f"
       }
     ]
   },

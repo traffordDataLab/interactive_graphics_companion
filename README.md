@@ -37,7 +37,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 ### Distribution
 
 - [x] [Histogram](src/histogram.vl.json)
-- [x] Dot plot(src/dot_plot.vl.json)
+- [x] [Dot plot](src/dot_plot.vl.json)
 - [ ] Dot strip plot
 - [x] [Barcode plot](src/barcode.vl.json)
 - [x] [Boxplot](boxplot.vl.json)
@@ -94,7 +94,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 
 ### Spatial
 
-- [ ] Basic choropleth (rate/ratio)
+- [x] [Basic choropleth (rate/ratio)](src/choropleth.vl.json)
 - [ ] Proportional symbol (count/magnitde)
 - [ ] Flow map
 - [ ] Contour map

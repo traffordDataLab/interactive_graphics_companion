@@ -15,4 +15,7 @@ st_read("ne_110m_admin_0_countries.shp") %>%
   select(country = NAME,
          country_code = ADM0_A3) %>% 
   filter(country != "Antarctica") %>% 
+  st_centroid(.) %>% 
+  cbind(st_coordinates(.)) %>% 
+  rename(lon = X, lat = Y) %>%
   st_write("countries.geojson")
