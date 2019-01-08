@@ -2,14 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Multiple line chart",
   "width": 500,
-  "title": {"text": "Population by region, 1800-2018"},
+  "title": {"text": "Total coal consumption by region, 1965-2016"},
   "data": {
-    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_dpop.csv"
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_dcoal.csv"
   },
   "transform": [
-    {"filter": {"field": "pop", "valid": true}},
+    {"filter": {"field": "coalConsumption", "valid": true}},
     {
-      "aggregate": [{"op": "sum", "field": "pop", "as": "total"}],
+      "aggregate": [{"op": "sum", "field": "coalConsumption", "as": "total"}],
       "groupby": ["region", "year"]
     }
   ],
@@ -53,7 +53,7 @@
       {
         "field": "total",
         "type": "quantitative",
-        "title": "Population",
+        "title": "Coal consumption (tonnes)",
         "format": ",.0f"
       }
     ]

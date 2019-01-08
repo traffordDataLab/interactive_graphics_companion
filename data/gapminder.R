@@ -93,3 +93,11 @@ read_csv("earthquake_deaths_annual_number.csv") %>%
   left_join(., countries, by = "country") %>% 
   select(country, region, year, earthquakeDeaths) %>% 
   write_csv("gapminder_dquakes.csv")
+
+# Coal consumption
+# https://www.gapminder.org/data/
+read_csv("coal_consumption_total.csv") %>% 
+  gather(year, coalConsumption, -country) %>% 
+  left_join(., countries, by = "country") %>% 
+  select(country, region, year, coalConsumption) %>%
+  write_csv("gapminder_dcoal.csv")

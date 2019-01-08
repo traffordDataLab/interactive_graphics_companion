@@ -36,13 +36,13 @@
 body{
     font-family: 'Roboto', sans-serif;
     color: #757575;
-    text-align: center;
 }
 
 .container {
     display: inline-block;
     margin: 5px;
     border: 1px dotted gray;
+    text-align: center;
 }
 
 figcaption {
@@ -54,181 +54,195 @@ figcaption {
 
 <body>
 
-    <h2> Change over time </h2>
-    <h3> Line (single) </h3>
-    <div class="container">
-        <figure>
-            <div id="line_single"></div>
-                    <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h1> Vega-Lite graphics companion </h1>
+<small>Last updated: January 2019</small>
+</br>
 
-    <h3> Line (multiple) </h3>
-    <div class="container">
-        <figure>
-            <div id="line_multiple"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<p>The Interactive Graphics Companion provides the  <a href="https://www.json.org/" target="_blank">JSON</a> specification for creating different data visualisations in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a>.</p>
 
-    <h3> Column </h3>
-    <div class="container">
-        <figure>
-            <div id="column"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<p>The Companion adopts the structure of the Financial Times’ <a href="https://ft.com/vocabulary" target="_blank">Visual Vocabulary</a> by categorising different chart types by the data relationships that they best illustrate.</p>
 
-    <h3> Area chart </h3>
-    <div class="container">
-        <figure>
-            <div id="area"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<p>The data used throughout the Companion derive from <a href="https://www.gapminder.org/data/" target="_blank">Gapminder</a> which are available under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Common Attribution License 4.0</a>.</p>
 
-    <h3> Area chart (stacked) </h3>
-    <div class="container">
-        <figure>
-            <div id="area_stacked"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Setup </h2>
+<p>To start creating charts and maps in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a> all you need is their <a href="https://vega.github.io/editor/#/custom/vega-lite " target="_blank">online editor</a> or a text editor like <a href="https://atom.io/ " target="_blank">Atom</a>.
+If you prefer to use your own text editor you'll need to use Vega-Lite's <a href="https://github.com/vega/vega-embed" target="_blank">Vega-Embed</a> JavaScript function which is helpfully provided in the linked <a href="https://www.trafforddatalab.io/interactive_graphics_companion/boilerplate.html" target="_blank">boilerplate.html</a> file.</p>
 
-    <h3> Circle timeline </h3>
-    <div class="container">
-        <figure>
-            <div id="circle_timeline"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Change over time </h2>
+<h3> Line (single) </h3>
+<div class="container">
+    <figure>
+        <div id="line_single"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Steamgraph </h3>
-    <div class="container">
-        <figure>
-            <div id="steamgraph"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Line (multiple) </h3>
+<div class="container">
+    <figure>
+        <div id="line_multiple"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h2> Correlation </h2>
-    <h3> Scatterplot </h3>
-    <div class="container">
-        <figure>
-            <div id="scatterplot"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Column </h3>
+<div class="container">
+    <figure>
+        <div id="column"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Bubble chart </h3>
-    <div class="container">
-        <figure>
-            <div id="bubble"></div>
-        </figure>
+<h3> Area chart </h3>
+<div class="container">
+    <figure>
+        <div id="area"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
+
+<h3> Area chart (stacked) </h3>
+<div class="container">
+    <figure>
+        <div id="area_stacked"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
+
+<h3> Circle timeline </h3>
+<div class="container">
+    <figure>
+        <div id="circle_timeline"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
+
+<h3> Steamgraph </h3>
+<div class="container">
+    <figure>
+        <div id="steamgraph"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
+
+<h2> Correlation </h2>
+<h3> Scatterplot </h3>
+<div class="container">
+    <figure>
+        <div id="scatterplot"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
+
+<h3> Bubble chart </h3>
+<div class="container">
+    <figure>
+        <div id="bubble"></div>
+    </figure>
     <figcaption>Source: Gapminder</figcaption>
-    </div>
+</div>
 
-    <h2> Deviation </h2>
-    <h3> Diverging bar </h3>
-    <div class="container">
-        <figure>
-            <div id="bar_diverging"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Deviation </h2>
+<h3> Diverging bar </h3>
+<div class="container">
+    <figure>
+        <div id="bar_diverging"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h2> Distribution </h2>
-    <h3> Histogram </h3>
-    <div class="container">
-        <figure>
-            <div id="histogram"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Distribution </h2>
+<h3> Histogram </h3>
+<div class="container">
+    <figure>
+        <div id="histogram"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Dot plot </h3>
-    <div class="container">
-        <figure>
-            <div id="dot_plot"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Dot plot </h3>
+<div class="container">
+    <figure>
+        <div id="dot_plot"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Barcode plot </h3>
-    <div class="container">
-        <figure>
-            <div id="barcode"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Barcode plot </h3>
+<div class="container">
+    <figure>
+        <div id="barcode"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Boxplot </h3>
-    <div class="container">
-        <figure>
-            <div id="boxplot"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Boxplot </h3>
+<div class="container">
+    <figure>
+        <div id="boxplot"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h2> Magnitude </h2>
-    <h3> Bar </h3>
-    <div class="container">
-        <figure>
-            <div id="bar"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Magnitude </h2>
+<h3> Bar </h3>
+<div class="container">
+    <figure>
+        <div id="bar"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Bar (labels) </h3>
-    <div class="container">
-        <figure>
-            <div id="bar_labels"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Bar (labels) </h3>
+<div class="container">
+    <figure>
+        <div id="bar_labels"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Paired column </h3>
-    <div class="container">
-        <figure>
-            <div id="column_paired"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Paired column </h3>
+<div class="container">
+    <figure>
+        <div id="column_paired"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h2> Part-to-whole </h2>
-    <h3> Stacked column/bar </h3>
-    <div class="container">
-        <figure>
-            <div id="column_stacked"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Part-to-whole </h2>
+<h3> Stacked column/bar </h3>
+<div class="container">
+    <figure>
+        <div id="column_stacked"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h2> Ranking </h2>
-    <h3> Slope </h3>
-    <div class="container">
-        <figure>
-            <div id="slope"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Ranking </h2>
+<h3> Slope </h3>
+<div class="container">
+    <figure>
+        <div id="slope"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h2> Spatial </h2>
-    <h3> Basic choropleth (rate/ratio) </h3>
-    <div class="container">
-        <figure>
-            <div id="choropleth"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h2> Spatial </h2>
+<h3> Basic choropleth (rate/ratio) </h3>
+<div class="container">
+    <figure>
+        <div id="choropleth"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
-    <h3> Proportional symbol (count/magnitude) </h3>
-    <div class="container">
-        <figure>
-            <div id="proportional_symbol"></div>
-            <figcaption>Source: Gapminder</figcaption>
-        </figure>
-    </div>
+<h3> Proportional symbol (count/magnitude) </h3>
+<div class="container">
+    <figure>
+        <div id="proportional_symbol"></div>
+        <figcaption>Source: Gapminder</figcaption>
+    </figure>
+</div>
 
 </body>
 </html>
