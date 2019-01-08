@@ -14,7 +14,7 @@ The Interactive Graphics Companion provides the JSON code to create different da
 - [ ] Connected scatterplot
 - [ ] Calendar heatmap
 - [ ] Priestley timeline
-- [ ] Circle timeline
+- [x] [Circle timeline](src/circle_timeline.vl.json)
 - [ ] Vertical timeline
 - [ ] Seismogram
 - [x] [Steamgraph](src/steamgraph.vl.json)

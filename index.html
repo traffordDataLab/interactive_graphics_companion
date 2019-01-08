@@ -13,6 +13,7 @@
     <script> vegaEmbed('#slope', "src/slope.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area', "src/area.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#area_stacked', "src/area_stacked.vl.json", {defaultStyle: true}).catch(console.warn); </script>
+    <script> vegaEmbed('#circle_timeline', "src/circle_timeline.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#scatterplot', "src/scatterplot.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bubble', "src/bubble.vl.json", {defaultStyle: true}).catch(console.warn); </script>
     <script> vegaEmbed('#bar_diverging', "src/bar_diverging.vl.json", {defaultStyle: true}).catch(console.warn); </script>
@@ -90,6 +91,14 @@ figcaption {
     <div class="container">
         <figure>
             <div id="area_stacked"></div>
+            <figcaption>Source: Gapminder</figcaption>
+        </figure>
+    </div>
+
+    <h3> Circle timeline </h3>
+    <div class="container">
+        <figure>
+            <div id="circle_timeline"></div>
             <figcaption>Source: Gapminder</figcaption>
         </figure>
     </div>

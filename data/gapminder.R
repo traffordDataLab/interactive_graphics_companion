@@ -85,3 +85,11 @@ read_csv("internet_users.csv") %>%
   filter(year >= "1990") %>%
   mutate(internetUsers = internetUsers/100) %>% 
   write_csv("gapminder_dintus.csv")
+
+# Earthquake deaths
+# https://www.gapminder.org/data/
+read_csv("earthquake_deaths_annual_number.csv") %>% 
+  gather(year, earthquakeDeaths, -country) %>% 
+  left_join(., countries, by = "country") %>% 
+  select(country, region, year, earthquakeDeaths) %>% 
+  write_csv("gapminder_dquakes.csv")
