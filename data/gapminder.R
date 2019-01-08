@@ -75,3 +75,13 @@ read_csv("children_per_woman_total_fertility.csv") %>%
   left_join(., countries, by = "country") %>% 
   select(country, region, year, fertilityRate) %>%
   write_csv("gapminder_dtfr.csv")
+
+# Internet users
+# http://gapm.io/dintus
+read_csv("internet_users.csv") %>% 
+  gather(year, internetUsers, -country) %>% 
+  left_join(., countries, by = "country") %>% 
+  select(country, region, year, internetUsers) %>% 
+  filter(year >= "1990") %>%
+  mutate(internetUsers = internetUsers/100) %>% 
+  write_csv("gapminder_dintus.csv")

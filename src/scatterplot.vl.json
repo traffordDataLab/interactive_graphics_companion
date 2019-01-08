@@ -2,11 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Scatterplot",
   "width": 500,
-  "title": {"text": "Relationship between life expectancy and income, 2017"},
+  "title": {"text": "Relationship between life expectancy and income in Africa, 2017", "offset": 15},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
-  "transform": [{"filter": {"timeUnit": "year", "field": "year", "equal": 2017}}],
+  "transform": [
+      {"filter": {"timeUnit": "year", "field": "year", "equal": 2017}},
+      {"filter": {"field": "region", "equal": "Africa"}}
+  ],
   "mark": "point",
   "encoding": {
     "y": {
@@ -18,16 +21,10 @@
     "x": {
       "field": "gdpPercap",
       "type": "quantitative",
-      "scale": {"type": "log", "domain": [1, 100000]},
+      "scale": {"type": "log", "domain": [100, 100000]},
       "axis": {"grid": false, "title": "Income per person", "format": "$,.0f"}
     },
-    "color": {"field": "region", "type": "nominal",
-    "scale": {
-      "domain": ["Africa", "Americas", "Asia", "Europe"],
-      "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
-    },
-"legend": {"orient": "top", "direction": "horizontal", "title": null}
-},
+    "color": {"value": "#fc6721", "legend": null},
     "tooltip": [
       {"field": "country", "type": "nominal", "title": "Country"},
       {

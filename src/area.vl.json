@@ -2,17 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Area",
   "width": 500,
-  "title": {"text": "Average life expectancy in Europe, 1800-2018", "offset": 20},
+  "title": {"text": "Share of people using the Internet in South Korea, 1990-2016", "offset": 10},
   "data": {
-    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_ilex.csv"
+    "url": "data/gapminder_dintus.csv"
   },
   "transform": [
-    {"filter": {"field": "region", "equal": "Europe"}},
-    {"filter": {"field": "lifeExp", "valid": true}},
-    {
-      "aggregate": [{"op": "mean", "field": "lifeExp", "as": "average"}],
-      "groupby": ["year"]
-    }
+    {"filter": {"field": "internetUsers", "valid": true}},
+    {"filter": {"field": "country", "equal": "South Korea"}}
   ],
   "mark": {"type": "area", "line": true},
   "encoding": {
@@ -23,11 +19,11 @@
       "axis": {"format": "%Y", "grid": false, "title": "Year"}
     },
     "y": {
-      "field": "average",
+      "field": "internetUsers",
       "type": "quantitative",
-      "axis": {"title": "Age (years)", "format": ",.0f"}
+      "axis": {"title": "Internet users", "titlePadding": 10, "format": ".0%"}
     },
-    "color": {"value": "#FFDC25"},
+    "color": {"value": "#fc6721"},
     "opacity": {"value": 0.7}
   },
   "config": {"view": {"stroke": "transparent"}}

@@ -7,12 +7,9 @@
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
   },
   "transform": [
-    {
-      "filter": {
-        "field": "country",
-        "oneOf": ["France", "Germany", "Ireland", "Italy"]
-      }
-    }
+    {"filter": {"field": "country", "oneOf": ["France", "Germany", "Ireland", "Italy"]}},
+    {"aggregate": [{"op": "sum", "field": "gdpPercap", "as": "total"}],
+    "groupby": ["year", "country"]}
   ],
   "mark": "area",
   "encoding": {
@@ -20,13 +17,12 @@
       "timeUnit": "year",
       "field": "year",
       "type": "temporal",
-      "axis": {"format": "%Y", "grid": false, "title": ""}
+      "axis": {"format": "%Y", "grid": false, "title": "Year"}
     },
     "y": {
-      "aggregate": "sum",
-      "field": "gdpPercap",
+      "field": "total",
       "type": "quantitative",
-      "axis": {"title": "Income per person", "format": "$,.0f"}
+      "axis": {"title": "Income (GDP per capita)", "titlePadding": 10, "format": "$,.0f"}
     },
     "color": {
       "field": "country",
@@ -34,8 +30,7 @@
       "scale": {"scheme": "set2"},
       "legend": null
     },
-    "opacity": {"value": 0.7},
-    "tooltip": [{"field": "country", "type": "nominal", "title": "Country"}]
+    "opacity": {"value": 0.7}
   },
   "config": {"view": {"stroke": "transparent"}}
 }

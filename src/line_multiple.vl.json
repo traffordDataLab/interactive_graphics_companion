@@ -2,16 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Multiple line chart",
   "width": 500,
-  "title": {"text": "Average life expectancy by region, 1800-2018"},
+  "title": {"text": "Average babies per woman, 1800-2018"},
   "data": {
-    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_ilex.csv"
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_dtfr.csv"
   },
   "transform": [
-    {"filter": {"field": "lifeExp", "valid": true}},
-    {
-      "aggregate": [{"op": "mean", "field": "lifeExp", "as": "average"}],
-      "groupby": ["region", "year"]
-    }
+    {"filter": {"field": "country", "oneOf": ["Iran", "United States"]}}
   ],
   "mark": "line",
   "encoding": {
@@ -21,13 +17,14 @@
       "timeUnit": "year",
       "axis": {"title": null, "grid": false}
     },
-    "y": {"field": "average", "type": "quantitative", "axis": {"title": null}},
+    "y": {
+      "field": "fertilityRate",
+      "type": "quantitative",
+      "axis": {"title": null}
+    },
     "color": {
-      "field": "region",
+      "field": "country",
       "type": "nominal",
-      "scale": {"domain": ["Africa", "Americas", "Asia", "Europe"],
-          "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
-      },
       "legend": {"orient": "bottom", "direction": "horizontal", "title": null}
     },
     "tooltip": [
@@ -37,11 +34,11 @@
         "timeUnit": "year",
         "title": "Year"
       },
-      {"field": "region", "type": "nominal", "title": "Region"},
+      {"field": "country", "type": "nominal", "title": "Country"},
       {
-        "field": "average",
+        "field": "fertilityRate",
         "type": "quantitative",
-        "title": "Age (years)",
+        "title": "Number of babies",
         "format": ".1f"
       }
     ]
