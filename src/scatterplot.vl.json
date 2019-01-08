@@ -11,6 +11,7 @@
       {"filter": {"field": "region", "equal": "Africa"}}
   ],
   "mark": "point",
+  "selection": {"view": {"type": "interval", "bind": "scales"}},
   "encoding": {
     "y": {
       "field": "lifeExp",
