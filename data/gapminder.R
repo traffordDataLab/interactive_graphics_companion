@@ -6,9 +6,7 @@
 
 library(tidyverse) ; library(readxl)
 
-# World Health Chart data ---------------------------
-
-# Geographies
+# Geographies  ---------------------------
 # https://www.gapminder.org/data/geo/
 download.file("http://gapm.io/dl_geo", destfile = "Data Geographies - v1 - by Gapminder.xlsx")
 countries <- read_xlsx("Data Geographies - v1 - by Gapminder.xlsx", sheet = 2) %>% 
@@ -17,6 +15,8 @@ countries <- read_xlsx("Data Geographies - v1 - by Gapminder.xlsx", sheet = 2) %
          country_code = geo) %>% 
   mutate(region = gsub("(?<=\\b)([a-z])", "\\U\\1", tolower(region), perl = TRUE),
          country_code = toupper(country_code))
+
+# Excerpt (1952-2017) ---------------------------
 
 # Life expectancy
 # http://gapm.io/ilex
@@ -50,7 +50,9 @@ left_join(lifeExp, gdpPercap, by = "join") %>%
   select(country, region, country_code, year, lifeExp, gdpPercap, pop) %>% 
   write_csv("gapminder.csv")
 
-# Historic life expectancy ---------------------------
+# Historical data ---------------------------
+
+# Life expectancy
 # http://gapm.io/ilex
 read_csv("life_expectancy_years.csv") %>% 
   gather(year, lifeExp, -country) %>% 
@@ -58,7 +60,7 @@ read_csv("life_expectancy_years.csv") %>%
   select(country, region, year, lifeExp) %>% 
   write_csv("gapminder_ilex.csv")
 
-# Historic population ---------------------------
+# Total population
 # http://gapm.io/dpop
 read_csv("population_total.csv") %>% 
   gather(year, pop, -country) %>% 
@@ -66,3 +68,10 @@ read_csv("population_total.csv") %>%
   select(country, region, year, pop) %>%
   write_csv("gapminder_dpop.csv")
 
+# Total fertility rate
+# http://gapm.io/dtfr
+read_csv("children_per_woman_total_fertility.csv") %>% 
+  gather(year, fertilityRate, -country) %>% 
+  left_join(., countries, by = "country") %>% 
+  select(country, region, year, fertilityRate) %>%
+  write_csv("gapminder_dtfr.csv")
