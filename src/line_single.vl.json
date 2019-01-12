@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Single line chart",
   "width": 500,
   "title": {"text": "Global average life expectancy, 1800-2018"},

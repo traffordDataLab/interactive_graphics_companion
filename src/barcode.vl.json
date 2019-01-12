@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Barcode chart",
   "width": 500, "height": 125,
   "title": {"text": "Life expectancy by continent, 2017", "offset": 20},

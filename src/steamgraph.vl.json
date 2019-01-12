@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Multiple line chart",
   "width": 500,
   "title": {"text": "Total coal consumption by region, 1965-2016"},

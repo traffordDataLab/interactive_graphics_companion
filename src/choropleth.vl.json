@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Basic choropleth (rate/ratio)",
   "width": 500, "height": 300,
   "title": "Life expectancy, 2017",

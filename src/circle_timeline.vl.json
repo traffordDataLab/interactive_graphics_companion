@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Circle timeline",
   "data": {"url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_dquakes.csv"},
   "width": 500,

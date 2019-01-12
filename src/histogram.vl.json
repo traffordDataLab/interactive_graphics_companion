@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Histogram",
   "width": 500,
   "title": {"text": "Distribution of income across countries, 2017"},

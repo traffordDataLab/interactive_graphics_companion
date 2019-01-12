@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Scatterplot",
   "width": 500,
   "title": {"text": "Relationship between life expectancy and income in Africa, 2017", "offset": 15},

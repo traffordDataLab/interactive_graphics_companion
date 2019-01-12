@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Diverging bar chart",
   "width": 450, "height": 450,
   "title": {"text": "Income per person, 2017", "offset": 10},

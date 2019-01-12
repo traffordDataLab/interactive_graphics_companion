@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Dot plot",
   "width": 500,
   "title": {"text": "Change in life expectancy, 1952 - 2017", "offset": 20},

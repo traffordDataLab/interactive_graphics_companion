@@ -1,5 +1,4 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Bar chart (vertical)",
   "width": 500,
   "title": {"text": "Afghanistan's population, 1952-2017"},
