@@ -2,7 +2,7 @@
   "description": "Bar",
   "width": 500,
   "title": {
-    "text": "African countries with the highest life expectancy, 2017",
+    "text": "Countries in Europe with the highest life expectancy, 2017",
     "offset": 10
   },
   "data": {
@@ -10,7 +10,7 @@
   },
   "transform": [
     {"filter": {"timeUnit": "year", "field": "year", "equal": 2017}},
-    {"filter": {"field": "region", "equal": "Africa"}},
+    {"filter": {"field": "region", "equal": "Europe"}},
     {"filter": {"field": "lifeExp", "valid": true}},
     {
       "window": [{"op": "rank", "as": "rank"}],
@@ -30,14 +30,14 @@
       "type": "quantitative",
       "axis": {"grid": false, "title": null, "ticks": false, "labels": false}
     },
-    "color": {"value": "#08C5ED"},
+    "color": {"value": "#FFDC25"},
     "tooltip": [
       {"field": "country", "type": "nominal", "title": "Country"},
       {
         "field": "lifeExp",
         "type": "quantitative",
         "title": "Age (years)",
-        "format": ",.0f"
+        "format": ",.1f"
       }
     ]
   },
