@@ -51,7 +51,8 @@
         "dx": 3,
         "fontStyle": "bold"
       },
-      "encoding": {"text": {"field": "lifeExp", "type": "quantitative"}}
+      "encoding": {"text": {"field": "lifeExp", "type": "quantitative"},
+      "color": {"value": "#757575"}}
     }
   ],
   "config": {
