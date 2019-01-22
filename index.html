@@ -7,9 +7,9 @@
         <meta name="description" content=""/>
         <title>Trafford Data Lab: Vega-Lite graphics companion</title>
 
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
         <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labBase.css"/>
         <!--link rel="stylesheet" href="https://www.trafforddatalab.io/css/labWebsite.css"/-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
 
         <style>
             /*
@@ -28,7 +28,13 @@
                 padding: 10px;
             }
 
-            .container
+            figure, figcaption
+            {
+                display: block;
+                box-sizing: border-box;
+            }
+
+            .chartContainer
             {
                 display: inline-block;
                 margin: 5px;
@@ -38,17 +44,11 @@
 
             figcaption
             {
-                text-align: center;
-                font-size: 8
+                text-align: right;
+                font-size: 12px;
             }
 
             /* ### In progress ###
-            div.layout
-            {
-                padding: 10px;
-                border: 1px solid #000;
-            }
-
             div#nav
             {
                 position: fixed;
@@ -67,7 +67,7 @@
 
     <body>
         <!-- ### In progress ###
-        <div id="nav" class="layout">
+        <div id="nav">
             <ul>
                 <li>Vega-Lite graphics companion</li>
             </ul>
@@ -138,7 +138,7 @@
         </div>
         -->
 
-        <div id="content" class="layout">
+        <div id="content">
             <h1>Vega-Lite graphics companion</h1>
             <small>Last updated: January 2019</small>
             <br />
@@ -157,7 +157,7 @@
 
             <h2> Change over time </h2>
             <h3> Line (single) </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="line_single"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -165,7 +165,7 @@
             </div>
 
             <h3> Line (multiple) </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="line_multiple"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -173,7 +173,7 @@
             </div>
 
             <h3> Column </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="column"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -181,7 +181,7 @@
             </div>
 
             <h3> Area chart </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="area"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -189,7 +189,7 @@
             </div>
 
             <h3> Area chart (stacked) </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="area_stacked"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -197,7 +197,7 @@
             </div>
 
             <h3> Circle timeline </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="circle_timeline"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -205,7 +205,7 @@
             </div>
 
             <h3> Steamgraph </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="steamgraph"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -214,7 +214,7 @@
 
             <h2> Correlation </h2>
             <h3> Scatterplot </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="scatterplot"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -222,7 +222,7 @@
             </div>
 
             <h3> Bubble chart </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="bubble"></div>
                 </figure>
@@ -231,7 +231,7 @@
 
             <h2> Deviation </h2>
             <h3> Diverging bar </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="bar_diverging"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -240,7 +240,7 @@
 
             <h2> Distribution </h2>
             <h3> Histogram </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="histogram"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -248,7 +248,7 @@
             </div>
 
             <h3> Dot plot </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="dot_plot"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -256,7 +256,7 @@
             </div>
 
             <h3> Barcode plot </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="barcode"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -264,7 +264,7 @@
             </div>
 
             <h3> Boxplot </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="boxplot"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -273,7 +273,7 @@
 
             <h2> Magnitude </h2>
             <h3> Bar </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="bar"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -281,7 +281,7 @@
             </div>
 
             <h3> Bar (labels) </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="bar_labels"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -289,7 +289,7 @@
             </div>
 
             <h3> Paired column </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="column_paired"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -298,7 +298,7 @@
 
             <h2> Part-to-whole </h2>
             <h3> Stacked column/bar </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="column_stacked"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -307,7 +307,7 @@
 
             <h2> Ranking </h2>
             <h3> Slope </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="slope"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -316,7 +316,7 @@
 
             <h2> Spatial </h2>
             <h3> Basic choropleth (rate/ratio) </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="choropleth"></div>
                     <figcaption>Source: Gapminder</figcaption>
@@ -324,7 +324,7 @@
             </div>
 
             <h3> Proportional symbol (count/magnitude) </h3>
-            <div class="container">
+            <div class="chartContainer">
                 <figure>
                     <div id="proportional_symbol"></div>
                     <figcaption>Source: Gapminder</figcaption>
