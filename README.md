@@ -2,7 +2,7 @@
 
 The Interactive Graphics Companion provides the JSON code to create different data visualisations in [Vega-Lite](https://vega.github.io/vega-lite). The visualisations are grouped according to the Financial Times' [Visual Vocabulary](http://www.ft.com/vocabulary) using data derived from [Gapminder](https://www.gapminder.org/).
 
-Code in this repo is licensed under [MIT](LICENCE.txt). Data derived from [Gapminder](https://www.gapminder.org/) is licensed under [Creative Commons Attribution Licence 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Code in this repo is licensed under [MIT](LICENSE.txt). Data derived from [Gapminder](https://www.gapminder.org/) is licensed under [Creative Commons Attribution Licence 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ### Change over Time
 
