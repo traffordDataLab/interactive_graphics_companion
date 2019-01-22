@@ -1,6 +1,10 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Stacked column/bar",
-  "width": 500,
+  "autosize": {
+    "type": "fit"
+  },
+  "width": 600,
   "title": {"text": "Total population by region, 1952 to 2017"},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"

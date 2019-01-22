@@ -1,6 +1,10 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Slope chart",
-  "width": 500,
+  "autosize": {
+    "type": "fit"
+  },
+  "width": 600,
   "title": {"text": "Change in income per person, 1952 - 2017", "offset": 20},
   "data": {
     "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"

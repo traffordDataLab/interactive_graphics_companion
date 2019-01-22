@@ -1,6 +1,10 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Bubble",
-  "width": 500,
+  "autosize": {
+    "type": "fit"
+  },
+  "width": 600,
   "title": {
     "text": "Relationship between life expectancy and income, 2017",
     "offset": 10

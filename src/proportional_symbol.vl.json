@@ -1,5 +1,9 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Basic choropleth (rate/ratio)",
+  "autosize": {
+    "type": "fit"
+  },
   "width": 600, "height": 400,
   "title": "Income by country, 2017", "offset": 10,
   "layer": [

@@ -1,6 +1,10 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
   "description": "Bar",
-  "width": 500,
+  "autosize": {
+    "type": "fit"
+  },
+  "width": 600,
   "title": {
     "text": "Countries with the lowest life expectancy, 2017",
     "offset": 10
