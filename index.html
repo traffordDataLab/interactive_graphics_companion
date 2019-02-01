@@ -15,10 +15,115 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
         <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labBase.css"/>
-        <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labPdf.css"/>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
         <style>
+            /* Styles from labWebsite.css with modifications */
+            .header
+            {
+                position: fixed;
+                background-color: white;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #757575;
+                z-index: 999999;
+            }
+
+            .navbar
+            {
+                float: right;
+                margin: 15px 0 0 0;
+            }
+
+            .menuItem
+            {
+                display: block;
+                float: left;
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .menuItem a
+            {
+                border-bottom: 1px solid white;        /* required so that we can simulate a link underline in the a:hover without the header wobbling by 1px */
+                padding: 0 12px;
+                margin: 0;
+                color: #757575;
+                text-decoration: none;
+            }
+
+            .menuItem a:hover
+            {
+                border-bottom: 1px solid #fc6721;
+            }
+
+            .main
+            {
+                color: #212121;
+                margin: auto;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                padding: 0 20px 2em 12px;
+            }
+
+            .main p
+            {
+                line-height: 1.8em;
+            }
+
+            .main li
+            {
+                line-height: 2em;
+            }
+
+            .footer
+            {
+                color: #212121;
+                width: 100%;
+                height: 5em;
+                margin: 0;
+                padding: 0;
+                xborder-bottom: 1px solid #f0f0f0;
+            }
+
+            .leftFooter
+            {
+                display: inline-block;
+                white-space: nowrap;
+            }
+
+            .rightFooter
+            {
+                background-color: white;
+                height: 100%;
+                display: inline-block;
+                float: right;
+            }
+
+            .noBulletPoints, .noBulletPoints * *
+            {
+                list-style-type: none;  /* remove the list-item bullet from the top level and all sub-level list items */
+            }
+
+            .traffordDataLabLogo
+            {
+                margin: 9px 12px 0 12px;
+                padding: 0;
+            }
+
+            .logoTrafford
+            {
+                height: 5em;
+            }
+
+            .license
+            {
+                font-size: 0.7em;
+                padding: 10px 0px 0px 12px;
+                margin-top: 50px;
+            }
+            /* End of labWebsite.css styles */
+
+
             figure, figcaption
             {
                 display: block;
@@ -39,317 +144,473 @@
                 font-size: 12px;
             }
 
-            /* ### In progress ###
             div#nav
             {
                 position: fixed;
                 left: 10px;
-                top: 10px;
+                top: 50px;
+                margin-top: 10px;
+                width: 25%;
+                max-height: 80%;
+                overflow: scroll;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding-left: 0;
             }
 
-            div#content
+            div#nav ul
+            {
+                list-style: none;
+                display: block;
+                padding: 0;
+                margin: 0;
+            }
+
+            div#nav li
+            {
+                display: block;
+            }
+
+            div#nav ul.level2
+            {
+                font-size: 0.8em;
+            }
+
+            div#nav ul.level2 a
+            {
+                padding-left: 25px
+            }
+
+            div#nav a
+            {
+                position:relative;
+                display: block;
+                padding: 6px 15px;
+                text-decoration: none;
+                color: #333;
+            }
+
+            div#nav a:hover
+            {
+                background-color: #ccc;
+            }
+
+            div#nav a.active
+            {
+                color: #fff;
+                background-color: #fc6721;
+            }
+
+            div.main
             {
                 width: 70%;
                 float: right;
             }
-            */
         </style>
     </head>
 
     <body>
-        <!-- ### In progress ###
+        <div id="header" class="header">
+            <a href="https://www.trafforddatalab.io/index.html"><img src="https://www.trafforddatalab.io/assets/logo/trafforddatalab_logo.svg" alt="Trafford Data Lab" width="93" border="0" class="traffordDataLabLogo"/></a>
+
+            <ul class="navbar noBulletPoints">
+                <li class="menuItem"><a href="https://www.trafforddatalab.io/index.html">trafforddatalab.io</a></li>
+                <li class="menuItem">|</li>
+                <li class="menuItem"><a href="https://twitter.com/traffordDataLab">@traffordDataLab</a></li>
+            </ul>
+        </div>
+
+        <div id="nav">
+            <ul id="menu">
+                <li><a href="#anchor_title" class="active">Vega-Lite graphics companion</a></li>
+                <li><a href="#anchor_setup">Setup</a></li>
+                <li>
+                    <a href="#anchor_change_over_time">Change over time</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_line_single">Line (single)</a></li>
+                        <li><a href="#anchor_line_multiple">Line (multiple)</a></li>
+                        <li><a href="#anchor_column">Column</a></li>
+                        <li><a href="#anchor_area">Area chart</a></li>
+                        <li><a href="#anchor_area_stacked">Area chart (stacked)</a></li>
+                        <li><a href="#anchor_circle_timeline">Circle timeline</a></li>
+                        <li><a href="#anchor_steamgraph">Steamgraph</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_correlation">Correlation</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_scatterplot">Scatterplot</a></li>
+                        <li><a href="#anchor_bubble">Bubble chart</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_deviation">Deviation</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_bar_diverging">Diverging bar</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_distribution">Distribution</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_histogram">Histogram</a></li>
+                        <li><a href="#anchor_dot_plot">Dot plot</a></li>
+                        <li><a href="#anchor_barcode">Barcode plot</a></li>
+                        <li><a href="#anchor_boxplot">Boxplot</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_magnitude">Magnitude</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_bar">Bar</a></li>
+                        <li><a href="#anchor_bar_labels">Bar (labels)</a></li>
+                        <li><a href="#anchor_column_paired">Paired column</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_part_to_whole">Part-to-whole</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_column_stacked">Stacked column/bar</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_ranking">Ranking</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_slope">Slope</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#anchor_spatial">Spatial</a>
+                    <ul class="level2">
+                        <li><a href="#anchor_choropleth">Basic choropleth (rate/ratio)</a></li>
+                        <li><a href="#anchor_proportional_symbol">Proportional symbol (count/magnitude)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!--
         <div id="nav">
             <ul>
-                <li>Vega-Lite graphics companion</li>
+                <li><a href="#">Vega-Lite graphics companion</a></li>
             </ul>
             <ul>
-                <li>Setup</li>
+                <li><a href="#">Setup</a></li>
             </ul>
             <ul>
-                <li>Change over time</li>
+                <li><a href="#">Change over time</a></li>
                 <ul>
-                    <li>Line (single)</li>
-                    <li>Line (multiple)</li>
-                    <li>Column</li>
-                    <li>Area chart</li>
-                    <li>Area chart (stacked)</li>
-                    <li>Circle timeline</li>
-                    <li>Steamgraph</li>
+                    <li><a href="#">Line (single)</a></li>
+                    <li><a href="#">Line (multiple)</a></li>
+                    <li><a href="#">Column</a></li>
+                    <li><a href="#">Area chart</a></li>
+                    <li><a href="#">Area chart (stacked)</a></li>
+                    <li><a href="#">Circle timeline</a></li>
+                    <li><a href="#">Steamgraph</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Correlation</li>
+                <li><a href="#">Correlation</a></li>
                 <ul>
-                    <li>Scatterplot</li>
-                    <li>Bubble chart</li>
+                    <li><a href="#">Scatterplot</a></li>
+                    <li><a href="#">Bubble chart</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Deviation</li>
+                <li><a href="#">Deviation</a></li>
                 <ul>
-                    <li>Diverging bar</li>
+                    <li><a href="#">Diverging bar</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Distribution</li>
+                <li><a href="#">Distribution</a></li>
                 <ul>
-                    <li>Histogram</li>
-                    <li>Dot plot</li>
-                    <li>Barcode plot</li>
-                    <li>Boxplot</li>
+                    <li><a href="#">Histogram</a></li>
+                    <li><a href="#">Dot plot</a></li>
+                    <li><a href="#">Barcode plot</a></li>
+                    <li><a href="#">Boxplot</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Magnitude</li>
+                <li><a href="#">Magnitude</a></li>
                 <ul>
-                    <li>Bar</li>
-                    <li>Bar (labels)</li>
-                    <li>Paired column</li>
+                    <li><a href="#">Bar</a></li>
+                    <li><a href="#">Bar (labels)</a></li>
+                    <li><a href="#">Paired column</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Part-to-whole</li>
+                <li><a href="#">Part-to-whole</a></li>
                 <ul>
-                    <li>Stacked column/bar</li>
+                    <li><a href="#">Stacked column/bar</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Ranking</li>
+                <li><a href="#">Ranking</a></li>
                 <ul>
-                    <li>Slope</li>
+                    <li><a href="#">Slope</a></li>
                 </ul>
             </ul>
             <ul>
-                <li>Spatial</li>
+                <li><a href="#">Spatial</a></li>
                 <ul>
-                    <li>Basic choropleth (rate/ratio)</li>
-                    <li>Proportional symbol (count/magnitude)</li>
+                    <li><a href="#">Basic choropleth (rate/ratio)</a></li>
+                    <li><a href="#">Proportional symbol (count/magnitude)</a></li>
                 </ul>
             </ul>
         </div>
         -->
 
-        <div class="container">
-            <div class="header">
-                <a href="https://www.trafforddatalab.io/index.html"><img src="https://www.trafforddatalab.io/assets/logo/trafforddatalab_logo.svg" alt="Trafford Data Lab" width="93" border="0" class="traffordDataLabLogo"/></a>
+        <div class="main">
+            <a id="anchor_title"></a>
+            <h1>Vega-Lite graphics companion</h1>
+            <small>Last updated: January 2019</small>
+            <br />
 
-                <ul class="navbar noBulletPoints">
-                    <li class="menuItem"><a href="https://www.trafforddatalab.io/index.html">trafforddatalab.io</a></li>
-                    <li class="menuItem">|</li>
-                    <li class="menuItem"><a href="https://twitter.com/traffordDataLab">@traffordDataLab</a></li>
-                </ul>
-            </div>
+            <p>The Interactive Graphics Companion provides the raw <a href="https://www.json.org/" target="_blank">JSON</a> for creating different data visualisations in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a>.
+            An accompanying blog post on <a href="https://medium.com/@traffordDataLab/take-back-control-of-your-data-visualisations-c56ec121b231" target="_blank">Medium</a> provides an overview of Vega-Lite and runs through a simple example.</p>
 
-            <div class="main">
-                <h1>Vega-Lite graphics companion</h1>
-                <small>Last updated: January 2019</small>
-                <br />
+            <p>The Companion adopts the structure of the Financial Times’ <a href="https://ft.com/vocabulary" target="_blank">Visual Vocabulary</a> by categorising different chart types by the data relationships that they best illustrate.</p>
 
-                <p>The Interactive Graphics Companion provides the raw <a href="https://www.json.org/" target="_blank">JSON</a> for creating different data visualisations in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a>.
-                An accompanying blog post on <a href="https://medium.com/@traffordDataLab/take-back-control-of-your-data-visualisations-c56ec121b231" target="_blank">Medium</a> provides an overview of Vega-Lite and runs through a simple example.</p>
+            <p>The data used throughout the Companion derive from <a href="https://www.gapminder.org/data/" target="_blank">Gapminder</a> which are available under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Common Attribution License 4.0</a>.</p>
 
-                <p>The Companion adopts the structure of the Financial Times’ <a href="https://ft.com/vocabulary" target="_blank">Visual Vocabulary</a> by categorising different chart types by the data relationships that they best illustrate.</p>
+            <a id="anchor_setup"></a>
+            <h2>Setup</h2>
+            <p>To start creating charts and maps in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a> all you need is their <a href="https://vega.github.io/editor/#/custom/vega-lite " target="_blank">online editor</a>.
+            If you prefer to use your own text editor (e.g. <a href="https://atom.io/ " target="_blank">Atom</a>) you'll need to drop your code into a JSON file and embed it in an HTML page using Vega-Lite's <a href="https://github.com/vega/vega-embed" target="_blank">Vega-Embed</a> JavaScript function.
+            You can find a boilerplate html file <a href="boilerplate.html" target="_blank">here</a>.</p>
 
-                <p>The data used throughout the Companion derive from <a href="https://www.gapminder.org/data/" target="_blank">Gapminder</a> which are available under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Common Attribution License 4.0</a>.</p>
+            <a id="anchor_change_over_time"></a>
+            <h2>Change over time</h2>
 
-                <h2> Setup </h2>
-                <p>To start creating charts and maps in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a> all you need is their <a href="https://vega.github.io/editor/#/custom/vega-lite " target="_blank">online editor</a>.
-                If you prefer to use your own text editor (e.g. <a href="https://atom.io/ " target="_blank">Atom</a>) you'll need to drop your code into a JSON file and embed it in an HTML page using Vega-Lite's <a href="https://github.com/vega/vega-embed" target="_blank">Vega-Embed</a> JavaScript function.
-                You can find a boilerplate html file <a href="boilerplate.html" target="_blank">here</a>.</p>
-
-                <h2> Change over time </h2>
-                <h3> Line (single) </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="line_single"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Line (multiple) </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="line_multiple"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Column </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="column"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Area chart </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="area"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Area chart (stacked) </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="area_stacked"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Circle timeline </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="circle_timeline"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Steamgraph </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="steamgraph"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h2> Correlation </h2>
-                <h3> Scatterplot </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="scatterplot"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Bubble chart </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="bubble"></div>
-                    </figure>
+            <a id="anchor_line_single"></a>
+            <h3>Line (single)</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="line_single"></div>
                     <figcaption>Source: Gapminder</figcaption>
-                </div>
-
-                <h2> Deviation </h2>
-                <h3> Diverging bar </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="bar_diverging"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h2> Distribution </h2>
-                <h3> Histogram </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="histogram"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Dot plot </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="dot_plot"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Barcode plot </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="barcode"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Boxplot </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="boxplot"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h2> Magnitude </h2>
-                <h3> Bar </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="bar"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Bar (labels) </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="bar_labels"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Paired column </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="column_paired"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h2> Part-to-whole </h2>
-                <h3> Stacked column/bar </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="column_stacked"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h2> Ranking </h2>
-                <h3> Slope </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="slope"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h2> Spatial </h2>
-                <h3> Basic choropleth (rate/ratio) </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="choropleth"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
-                <h3> Proportional symbol (count/magnitude) </h3>
-                <div class="chartContainer">
-                    <figure>
-                        <div id="proportional_symbol"></div>
-                        <figcaption>Source: Gapminder</figcaption>
-                    </figure>
-                </div>
-
+                </figure>
             </div>
 
-            <div class="footer">
-                <div class="leftFooter">
-                    <div class="license">Code <a class="footerLink" href="https://www.trafforddatalab.io/interactive_graphics_companion/LICENSE.txt" target="_blank">licensed</a> under MIT, data under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution Licence 4.0</a></div>
-                </div>
-                <div class="rightFooter">
-                    <a href="https://www.trafford.gov.uk"><img class="logoTrafford" src="https://www.trafforddatalab.io/images/trafford_council_logo_black_on_white_100px.png" alt="Trafford Council" border="0"/></a>
-                </div>
+            <a id="anchor_line_multiple"></a>
+            <h3>Line (multiple)</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="line_multiple"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
             </div>
 
+            <a id="anchor_column"></a>
+            <h3>Column</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="column"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_area"></a>
+            <h3>Area chart</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="area"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_area_stacked"></a>
+            <h3>Area chart (stacked)</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="area_stacked"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_circle_timeline"></a>
+            <h3>Circle timeline</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="circle_timeline"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_steamgraph"></a>
+            <h3>Steamgraph</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="steamgraph"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_correlation"></a>
+            <h2>Correlation</h2>
+
+            <a id="anchor_scatterplot"></a>
+            <h3>Scatterplot</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="scatterplot"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_bubble"></a>
+            <h3>Bubble chart</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="bubble"></div>
+                </figure>
+                <figcaption>Source: Gapminder</figcaption>
+            </div>
+
+            <a id="anchor_deviation"></a>
+            <h2>Deviation</h2>
+
+            <a id="anchor_bar_diverging"></a>
+            <h3>Diverging bar</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="bar_diverging"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_distribution"></a>
+            <h2>Distribution</h2>
+
+            <a id="anchor_histogram"></a>
+            <h3>Histogram</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="histogram"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_dot_plot"></a>
+            <h3>Dot plot</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="dot_plot"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_barcode"></a>
+            <h3>Barcode plot</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="barcode"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_boxplot"></a>
+            <h3>Boxplot</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="boxplot"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_magnitude"></a>
+            <h2>Magnitude</h2>
+
+            <a id="anchor_bar"></a>
+            <h3>Bar</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="bar"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_bar_labels"></a>
+            <h3>Bar (labels)</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="bar_labels"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_column_paired"></a>
+            <h3>Paired column</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="column_paired"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_part_to_whole"></a>
+            <h2>Part-to-whole</h2>
+
+            <a id="anchor_column_stacked"></a>
+            <h3>Stacked column/bar</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="column_stacked"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_ranking"></a>
+            <h2>Ranking</h2>
+
+            <a id="anchor_slope"></a>
+            <h3>Slope</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="slope"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_spatial"></a>
+            <h2>Spatial</h2>
+
+            <a id="anchor_choropleth"></a>
+            <h3>Basic choropleth (rate/ratio)</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="choropleth"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
+
+            <a id="anchor_proportional_symbol"></a>
+            <h3>Proportional symbol (count/magnitude)</h3>
+            <div class="chartContainer">
+                <figure>
+                    <div id="proportional_symbol"></div>
+                    <figcaption>Source: Gapminder</figcaption>
+                </figure>
+            </div>
         </div>
+
+        <div class="footer">
+            <div class="leftFooter">
+                <div class="license">Code <a class="footerLink" href="https://www.trafforddatalab.io/interactive_graphics_companion/LICENSE.txt" target="_blank">licensed</a> under MIT, data under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution Licence 4.0</a></div>
+            </div>
+            <div class="rightFooter">
+                <a href="https://www.trafford.gov.uk"><img class="logoTrafford" src="https://www.trafforddatalab.io/images/trafford_council_logo_black_on_white_100px.png" alt="Trafford Council" border="0"/></a>
+            </div>
+        </div>
+
+
 
         <!-- Load script libraries -->
         <script src="https://cdn.jsdelivr.net/npm/vega@4.3.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc10"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.24.1"></script>
+        <!--script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script-->
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+
 
         <script>
             // Embed the Vega-lite visualisations
@@ -374,6 +635,56 @@
             vegaEmbed('#column_stacked', "src/column_stacked.vl.json", {defaultStyle: true}).catch(console.warn);
             vegaEmbed('#choropleth', "src/choropleth.vl.json", {defaultStyle: true}).catch(console.warn);
             vegaEmbed('#proportional_symbol', "src/proportional_symbol.vl.json", {defaultStyle: true}).catch(console.warn);
+
+            // ### JQuery code to handle the reactive menu - courtesy of Marcus Ekwall https://jsfiddle.net/mekwall/up4nu/ ###
+            // Cache selectors
+            var lastId,
+                header = $("#header"),
+                navMenu = $("#menu"),
+                pageHeaderHeight = header.outerHeight()+10,
+                // All list items
+                menuItems = navMenu.find("a"),
+                // Anchors corresponding to menu items
+                scrollItems = menuItems.map(function(){
+                  var item = $($(this).attr("href"));
+                  if (item.length) { return item; }
+                });
+
+            // Bind click handler to menu items
+            // so we can get a fancy scroll animation
+            menuItems.click(function(e){
+                var href = $(this).attr("href"),
+                    offsetTop = href === "#" ? 0 : $(href).offset().top-pageHeaderHeight+1;
+
+                $('html, body').stop().animate({
+                    scrollTop: offsetTop
+                }, 300);
+
+                e.preventDefault();
+            });
+
+            // Bind to scroll
+            $(window).scroll(function() {
+                // Get container scroll position
+                var fromTop = $(this).scrollTop()+pageHeaderHeight;
+
+                // Get id of current scroll item
+                var cur = scrollItems.map(function(){
+                    if ($(this).offset().top < fromTop)
+                    return this;
+                });
+
+                // Get the id of the current element
+                cur = cur[cur.length-1];
+                var id = cur && cur.length ? cur[0].id : "";
+
+                if (lastId !== id) {
+                    lastId = id;
+                    // Set/remove active class
+                    menuItems.removeClass('active');
+                    menuItems.filter("[href='#"+id+"']").addClass("active");
+                }
+            });
         </script>
     </body>
 </html>
