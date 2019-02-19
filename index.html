@@ -688,8 +688,9 @@
                 if (lastId !== id) {
                     lastId = id;
 
-                    // get the parent ul tag of the current item
-                    var parentUl = menuItems.filter("[href='#"+id+"']").parent().parent();
+                    // get the parent li and ul tag of the current item
+                    var parentLi = menuItems.filter("[href='#"+id+"']").parent();
+                    var parentUl = parentLi.parent();
 
                     // remove current active class and visible class from the link and parent ul tag
                     menuItems.removeClass('active');
@@ -699,6 +700,7 @@
                     menuItems.filter("[href='#"+id+"']").addClass("active");
 
                     // add visible class to parent ul tag if it is a sub-list, i.e. a ul within an li
+                    if (parentLi.find('ul')) parentLi.find('ul').addClass('visible');
                     if (parentUl.hasClass('level2')) parentUl.addClass('visible');
                 }
             });
