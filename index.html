@@ -82,7 +82,6 @@
                 height: 5em;
                 margin: 0;
                 padding: 0;
-                xborder-bottom: 1px solid #f0f0f0;
             }
 
             .leftFooter
@@ -294,78 +293,6 @@
                 </li>
             </ul>
         </nav>
-
-        <!--
-        <div id="nav">
-            <ul>
-                <li><a href="#">Vega-Lite graphics companion</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Setup</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Change over time</a></li>
-                <ul>
-                    <li><a href="#">Line (single)</a></li>
-                    <li><a href="#">Line (multiple)</a></li>
-                    <li><a href="#">Column</a></li>
-                    <li><a href="#">Area chart</a></li>
-                    <li><a href="#">Area chart (stacked)</a></li>
-                    <li><a href="#">Circle timeline</a></li>
-                    <li><a href="#">Steamgraph</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Correlation</a></li>
-                <ul>
-                    <li><a href="#">Scatterplot</a></li>
-                    <li><a href="#">Bubble chart</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Deviation</a></li>
-                <ul>
-                    <li><a href="#">Diverging bar</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Distribution</a></li>
-                <ul>
-                    <li><a href="#">Histogram</a></li>
-                    <li><a href="#">Dot plot</a></li>
-                    <li><a href="#">Barcode plot</a></li>
-                    <li><a href="#">Boxplot</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Magnitude</a></li>
-                <ul>
-                    <li><a href="#">Bar</a></li>
-                    <li><a href="#">Bar (labels)</a></li>
-                    <li><a href="#">Paired column</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Part-to-whole</a></li>
-                <ul>
-                    <li><a href="#">Stacked column/bar</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Ranking</a></li>
-                <ul>
-                    <li><a href="#">Slope</a></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><a href="#">Spatial</a></li>
-                <ul>
-                    <li><a href="#">Basic choropleth (rate/ratio)</a></li>
-                    <li><a href="#">Proportional symbol (count/magnitude)</a></li>
-                </ul>
-            </ul>
-        </div>
-        -->
 
         <div class="main">
             <a id="anchor_title"></a>
@@ -610,14 +537,11 @@
         </div>
 
 
-
         <!-- Load script libraries -->
         <script src="https://cdn.jsdelivr.net/npm/vega@4.3.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc10"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.24.1"></script>
-        <!--script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script-->
         <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
-
 
         <script>
             // Embed the Vega-lite visualisations
@@ -643,7 +567,7 @@
             vegaEmbed('#choropleth', "src/choropleth.vl.json", {defaultStyle: true}).catch(console.warn);
             vegaEmbed('#proportional_symbol', "src/proportional_symbol.vl.json", {defaultStyle: true}).catch(console.warn);
 
-            // ### JQuery code to handle the reactive menu - courtesy of Marcus Ekwall https://jsfiddle.net/mekwall/up4nu/ ###
+            // ### JQuery code to handle the reactive menu - based on https://jsfiddle.net/mekwall/up4nu/ by Marcus Ekwall ###
             // Cache selectors
             var lastId,
                 header = $('#header'),
