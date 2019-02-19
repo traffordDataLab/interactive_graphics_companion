@@ -124,7 +124,7 @@
             /* End of labWebsite.css styles */
 
 
-            figure, figcaption
+            figure, figcaption, nav
             {
                 display: block;
                 box-sizing: border-box;
@@ -144,7 +144,7 @@
                 font-size: 12px;
             }
 
-            div#nav
+            nav
             {
                 position: fixed;
                 left: 10px;
@@ -158,7 +158,7 @@
                 padding-left: 0;
             }
 
-            div#nav ul
+            nav ul
             {
                 list-style: none;
                 display: block;
@@ -166,22 +166,17 @@
                 margin: 0;
             }
 
-            div#nav li
+            nav li
             {
                 display: block;
             }
 
-            div#nav ul.level2
-            {
-                font-size: 0.8em;
-            }
-
-            div#nav ul.level2 a
+            nav ul.level2 a
             {
                 padding-left: 25px
             }
 
-            div#nav a
+            nav a
             {
                 position:relative;
                 display: block;
@@ -190,12 +185,13 @@
                 color: #333;
             }
 
-            div#nav a:hover
+            nav a:hover
             {
                 background-color: #ccc;
+                text-decoration: none;
             }
 
-            div#nav a.active
+            nav a.active
             {
                 color: #fff;
                 background-color: #fc6721;
@@ -205,6 +201,17 @@
             {
                 width: 70%;
                 float: right;
+            }
+
+            .level2
+            {
+                font-size: 0.8em;
+                display: none;
+            }
+
+            .visible
+            {
+                display: block;
             }
         </style>
     </head>
@@ -220,7 +227,7 @@
             </ul>
         </div>
 
-        <div id="nav">
+        <nav>
             <ul id="menu">
                 <li><a href="#anchor_title" class="active">Vega-Lite graphics companion</a></li>
                 <li><a href="#anchor_setup">Setup</a></li>
@@ -286,7 +293,7 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </nav>
 
         <!--
         <div id="nav">
@@ -639,21 +646,21 @@
             // ### JQuery code to handle the reactive menu - courtesy of Marcus Ekwall https://jsfiddle.net/mekwall/up4nu/ ###
             // Cache selectors
             var lastId,
-                header = $("#header"),
-                navMenu = $("#menu"),
+                header = $('#header'),
+                navMenu = $('#menu'),
                 pageHeaderHeight = header.outerHeight()+10,
                 // All list items
-                menuItems = navMenu.find("a"),
+                menuItems = navMenu.find('a'),
                 // Anchors corresponding to menu items
                 scrollItems = menuItems.map(function(){
-                  var item = $($(this).attr("href"));
+                  var item = $($(this).attr('href'));
                   if (item.length) { return item; }
                 });
 
             // Bind click handler to menu items
             // so we can get a fancy scroll animation
             menuItems.click(function(e){
-                var href = $(this).attr("href"),
+                var href = $(this).attr('href'),
                     offsetTop = href === "#" ? 0 : $(href).offset().top-pageHeaderHeight+1;
 
                 $('html, body').stop().animate({
@@ -680,9 +687,19 @@
 
                 if (lastId !== id) {
                     lastId = id;
-                    // Set/remove active class
+
+                    // get the parent ul tag of the current item
+                    var parentUl = menuItems.filter("[href='#"+id+"']").parent().parent();
+
+                    // remove current active class and visible class from the link and parent ul tag
                     menuItems.removeClass('active');
+                    navMenu.find('ul').removeClass('visible');
+
+                    // add active class to current link
                     menuItems.filter("[href='#"+id+"']").addClass("active");
+
+                    // add visible class to parent ul tag if it is a sub-list, i.e. a ul within an li
+                    if (parentUl.hasClass('level2')) parentUl.addClass('visible');
                 }
             });
         </script>
