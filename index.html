@@ -15,126 +15,39 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
         <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labBase.css"/>
+        <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labWebsite.css"/>
 
         <style>
-            /* Styles from labWebsite.css with modifications */
-            .header
-            {
-                position: fixed;
-                background-color: white;
-                width: 100%;
-                text-align: left;
-                border-bottom: 1px solid #757575;
-                z-index: 999999;
-            }
+        /* Styles from labWebsite.css with modifications */
+        .main
+        {
+            margin-top: 30px;
+            padding: 0 20px 2em 12px;
+        }
 
-            .navbar
-            {
-                float: right;
-                margin: 15px 0 0 0;
-            }
+        .footer
+        {
+            color: #212121;
+            width: 100%;
+            height: 5em;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            position: relative;
+        }
 
-            .menuItem
-            {
-                display: block;
-                float: left;
-                font-size: 16px;
-                margin-bottom: 15px;
-            }
-
-            .menuItem a
-            {
-                border-bottom: 1px solid white;        /* required so that we can simulate a link underline in the a:hover without the header wobbling by 1px */
-                padding: 0 12px;
-                margin: 0;
-                color: #757575;
-                text-decoration: none;
-            }
-
-            .menuItem a:hover
-            {
-                border-bottom: 1px solid #fc6721;
-            }
-
-            .main
-            {
-                color: #212121;
-                margin: auto;
-                margin-top: 30px;
-                margin-bottom: 30px;
-                padding: 0 20px 2em 12px;
-            }
-
-            .main p
-            {
-                line-height: 1.8em;
-            }
-
-            .main li
-            {
-                line-height: 2em;
-            }
-
-            .footer
-            {
-                color: #212121;
-                width: 100%;
-                height: 5em;
-                margin: 0;
-                padding: 0;
-            }
-
-            .leftFooter
-            {
-                display: inline-block;
-                white-space: nowrap;
-            }
-
-            .rightFooter
-            {
-                background-color: white;
-                height: 100%;
-                display: inline-block;
-                float: right;
-            }
-
-            .noBulletPoints, .noBulletPoints * *
-            {
-                list-style-type: none;  /* remove the list-item bullet from the top level and all sub-level list items */
-            }
-
-            .traffordDataLabLogo
-            {
-                margin: 9px 12px 0 12px;
-                padding: 0;
-            }
-
-            .logoTrafford
-            {
-                height: 5em;
-            }
-
-            .license
-            {
-                font-size: 0.7em;
-                padding: 10px 0px 0px 12px;
-                margin-top: 50px;
-            }
-            /* End of labWebsite.css styles */
-
+        .license
+        {
+            font-size: 0.7em;
+            padding: 10px 0px 0px 12px;
+            margin-top: 50px;
+        }
+        /* End of labWebsite.css styles */
 
             figure, figcaption, nav
             {
                 display: block;
                 box-sizing: border-box;
-            }
-
-            .chartContainer
-            {
-                display: inline-block;
-                margin: 5px;
-                border: 1px dotted gray;
-                text-align: center;
             }
 
             figcaption
@@ -157,7 +70,7 @@
                 padding-left: 0;
             }
 
-            nav ul
+            #menu
             {
                 list-style: none;
                 display: block;
@@ -165,17 +78,12 @@
                 margin: 0;
             }
 
-            nav li
+            #menu li
             {
                 display: block;
             }
 
-            nav ul.level2 a
-            {
-                padding-left: 25px
-            }
-
-            nav a
+            #menu a
             {
                 position:relative;
                 display: block;
@@ -184,22 +92,16 @@
                 color: #333;
             }
 
-            nav a:hover
+            #menu a:hover
             {
                 background-color: #ccc;
                 text-decoration: none;
             }
 
-            nav a.active
+            #menu a.active
             {
                 color: #fff;
                 background-color: #fc6721;
-            }
-
-            div.main
-            {
-                width: 70%;
-                float: right;
             }
 
             .level2
@@ -208,9 +110,28 @@
                 display: none;
             }
 
+            .level2 a
+            {
+                padding-left: 25px
+            }
+
             .visible
             {
                 display: block;
+            }
+
+            .chartContainer
+            {
+                display: inline-block;
+                margin: 5px;
+                border: 1px dotted gray;
+                text-align: center;
+            }
+
+            .main
+            {
+                width: 70%;
+                float: right;
             }
         </style>
     </head>
