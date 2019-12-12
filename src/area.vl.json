@@ -4,7 +4,7 @@
   "width": "container",
   "title": {"text": "Share of people using the Internet in South Korea, 1990-2016", "offset": 10},
   "data": {
-    "url": "data/gapminder_dintus.csv"
+    "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_dintus.csv"
   },
   "transform": [
     {"filter": {"field": "internetUsers", "valid": true}},
