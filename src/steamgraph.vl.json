@@ -14,6 +14,9 @@
     }
   ],
   "mark": "area",
+  "selection": {
+    "choice": {"type": "multi", "fields": ["region"], "bind": "legend"}
+  },
   "encoding": {
     "x": {
       "field": "year",
@@ -40,7 +43,11 @@
         "domain": ["Africa", "Americas", "Asia", "Europe"],
         "range": ["#08C5ED", "#80D322", "#FF6973", "#FFDC25"]
       },
-      "legend": null
+       "legend": {"title": null}
+    },
+    "opacity": {
+      "condition": {"selection": "choice", "value": 1},
+      "value": 0.2
     },
     "tooltip": [
       {
@@ -50,11 +57,7 @@
         "title": "Year"
       },
       {"field": "region", "type": "nominal", "title": "Region"},
-      {
-        "field": "total",
-        "type": "quantitative",
-        "title": "Coal consumption (tonnes)",
-        "format": ",.0f"
+      {"field": "total", "type": "quantitative", "title": "Coal consumption (tonnes)", "format": ",.0f"
       }
     ]
   },
