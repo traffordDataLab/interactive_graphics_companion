@@ -2,7 +2,7 @@
 <html lang="en-GB">
     <head>
         <title>Trafford Data Lab: Vega-Lite graphics companion</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
         <meta charset="UTF-8"/>
         <meta name="keywords" content=""/>
         <meta name="description" content=""/>
@@ -13,57 +13,92 @@
         <meta name="twitter:image" content="https://www.trafforddatalab.io/interactive_graphics_companion/twitter-card.png" />
         <meta name="twitter:image:alt" content="Example of an interactive circle timeline chart." />
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labBase.css"/>
-        <link rel="stylesheet" href="https://www.trafforddatalab.io/css/labWebsite.css"/>
+        <link rel="stylesheet" href="css/base.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%7CRoboto"/>
 
         <style>
-            /* Styles from labWebsite.css with modifications */
-            .header
+            /* Contains the accessibility skip links - these are positioned off screen not hidden, so that they can be read out as well as focussed using keyboard */
+            #a11yNav
             {
-                z-index: 99999;
+                position: absolute;
+                top: -30em;
+                z-index: 333;
+                list-style-type: none;  /* remove the list-item bullets */
             }
 
-            .main
+            #a11yNav a
             {
-                box-sizing: border-box;
-                margin-top: 35px;
-                padding: 0 20px 2em 5px;
+                position: absolute;
+                left: 0;
+                width: 20em;
+                text-align: center;
+                font-weight: bold;
+                color: #fff;
+                padding: 0.75em 0;
+                border-bottom-right-radius: 2.25em;
+            }
+
+            #a11yNav a:focus, #a11yNav a:hover
+            {
+                top: 29em;
+            }
+
+            main
+            {
+                margin: auto;
+                padding: 1em 20px 2em 5px;
                 overflow: auto;
                 width: 73%;
                 float: right;
             }
 
-            .footer
+            main p
             {
-                color: #212121;
+                line-height: 1.8em;
+            }
+
+            main li
+            {
+                line-height: 2em;
+            }
+
+            h1
+            {
+                margin-bottom: 0;
+            }
+
+            footer
+            {
                 width: 100%;
                 height: 5em;
                 margin: 0;
                 padding: 0;
                 background-color: transparent;
-                position: relative;
+                overflow: hidden;
+                clear: both;
+                z-index: 0;
             }
 
-            .license
+            .logoTrafford
             {
-                font-size: 0.7em;
-                padding: 10px 0px 0px 12px;
-                margin-top: 50px;
+                height: 5em;
+                background-color: #fff;
+                float: right;
             }
-            /* End of labWebsite.css styles */
 
-            figure, figcaption, nav
+            /* content block usually paired with themeBlockLight */
+            .contentBlock
             {
-                display: block;
-                box-sizing: border-box;
+                padding: 1em;
+                border-left: 4px solid #757575;
             }
 
             figure
             {
-                margin: 5px;
+                margin: 0;
                 border: 1px dotted gray;
                 text-align: center;
+                margin-bottom: 5em;
             }
 
             figcaption
@@ -77,9 +112,8 @@
                 box-sizing: border-box;
                 position: fixed;
                 float: left;
-                left: 10px;
-                top: 50px;
-                margin-top: 10px;
+                left: 1em;
+                top: 1em;
                 width: 25%;
                 max-height: 85%;
                 overflow: auto;
@@ -120,7 +154,7 @@
             #menu a.active
             {
                 color: #fff;
-                background-color: #fc6721;
+                background-color: #5d77a3;
             }
 
             .level2
@@ -142,6 +176,16 @@
                 overflow: hidden;
             }
 
+            /* changes due to screen width */
+            @media (min-width:1300px)
+            {
+                /* This prevents the content going too wide once the screen goes beyond a maximum width. */
+                main
+                {
+                    width: 1070px;
+                }
+            }
+
             @media (max-width:800px)
             {
                 nav
@@ -149,54 +193,22 @@
                     display: none;
                 }
 
-                .main
+                main
                 {
                     float: none;
                     width: auto;
-                }
-
-                .header
-                {
-                    top: 0;
-                }
-            }
-
-            @media (max-width:620px)
-            {
-                nav
-                {
-                    display: none;
-                }
-
-                .main
-                {
-                    margin-top: 80px;
-                    float: none;
-                    width: auto;
-                }
-
-                .header
-                {
-                    top: 0;
                 }
             }
         </style>
     </head>
 
     <body>
-        <div id="header" class="header">
-            <a href="https://www.trafforddatalab.io/index.html"><img src="https://www.trafforddatalab.io/assets/logo/trafforddatalab_logo.svg" alt="Trafford Data Lab" width="93" border="0" class="traffordDataLabLogo"/></a>
-
-            <ul class="navbar noBulletPoints">
-                <li class="menuItem"><a href="https://www.trafforddatalab.io/index.html">trafforddatalab.io</a></li>
-                <li class="menuItem">|</li>
-                <li class="menuItem"><a href="https://twitter.com/traffordDataLab">@traffordDataLab</a></li>
-            </ul>
-        </div>
-
+        <ul id="a11yNav">
+            <li><a href="#main" class="themeBlockDark">Skip to main content</a></li>
+        </ul>
         <nav>
             <ul id="menu">
-                <li><a href="#anchor_title" class="active">Vega-Lite graphics companion</a></li>
+                <li><a href="#anchor_title" class="active">Interactive graphics companion</a></li>
                 <li><a href="#anchor_setup">Setup</a></li>
                 <li>
                     <a href="#anchor_change_over_time">Change over time</a>
@@ -262,24 +274,24 @@
             </ul>
         </nav>
 
-        <div class="main">
+        <main id="main">
+            <a href="https://www.trafforddatalab.io/learning.html"><img src="https://www.trafforddatalab.io/assets/logo/trafforddatalab_logo.svg" alt="Trafford Data Lab" width="93" border="0" class="traffordDataLabLogo"/></a><br />
             <a id="anchor_title"></a>
-            <h1>Vega-Lite graphics companion</h1>
-            <small>Last updated: December 2019</small>
+            <h1>Interactive graphics companion</h1>
+            <span class="smallText">Last updated: December 2019</span>
             <br />
 
             <p>The Interactive Graphics Companion provides the raw <a href="https://www.json.org/" target="_blank">JSON</a> for creating different data visualisations in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a>.
             An accompanying blog post on <a href="https://medium.com/@traffordDataLab/take-back-control-of-your-data-visualisations-c56ec121b231" target="_blank">Medium</a> provides an overview of Vega-Lite and runs through a simple example.</p>
-
             <p>The Companion adopts the structure of the Financial Times’ <a href="https://ft.com/vocabulary" target="_blank">Visual Vocabulary</a> by categorising different chart types by the data relationships that they best illustrate.</p>
-
             <p>The data used throughout the Companion derive from <a href="https://www.gapminder.org/data/" target="_blank">Gapminder</a> which are available under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Common Attribution License 4.0</a>.</p>
 
             <a id="anchor_setup"></a>
             <h2>Setup</h2>
             <p>To start creating charts and maps in <a href="https://vega.github.io/vega-lite/" target="_blank">Vega-Lite</a> all you need is their <a href="https://vega.github.io/editor/#/custom/vega-lite " target="_blank">online editor</a>.
             If you prefer to use your own text editor (e.g. <a href="https://atom.io/ " target="_blank">Atom</a>) you'll need to drop your code into a JSON file and embed it in an HTML page using Vega-Lite's <a href="https://github.com/vega/vega-embed" target="_blank">Vega-Embed</a> JavaScript function.
-            You can find a boilerplate html file <a href="boilerplate.html" target="_blank">here</a>.</p>
+            You can use our <a href="boilerplate.html" target="_blank">boilerplate html file</a> as a template.</p>
+            <br />
 
             <a id="anchor_change_over_time"></a>
             <h2>Change over time</h2>
@@ -451,16 +463,11 @@
                 <div id="proportional_symbol" class="chartContainer"></div>
                 <figcaption>Source: Gapminder</figcaption>
             </figure>
-        </div>
+        </main>
 
-        <div class="footer">
-            <div class="leftFooter">
-                <div class="license">Code <a class="footerLink" href="https://www.trafforddatalab.io/interactive_graphics_companion/LICENSE.txt" target="_blank">licensed</a> under MIT, data under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution Licence 4.0</a></div>
-            </div>
-            <div class="rightFooter">
-                <a href="https://www.trafford.gov.uk"><img class="logoTrafford" src="https://www.trafforddatalab.io/images/trafford_council_logo_black_on_white_100px.png" alt="Trafford Council" border="0"/></a>
-            </div>
-        </div>
+        <footer id="footer">
+            <a href="https://www.trafford.gov.uk" target="_blank" aria-label="Visit the Trafford Council website"><img class="logoTrafford" src="https://www.trafforddatalab.io/images/trafford_council_logo_black_on_white_100px.png" alt="Trafford Council"/></a>
+        </footer>
 
 
         <!-- Load script libraries -->
@@ -498,7 +505,7 @@
             var lastId,
                 header = $('#header'),
                 navMenu = $('#menu'),
-                pageHeaderHeight = header.outerHeight()+10,
+                pageHeaderHeight = header.outerHeight()+30,
                 // All list items
                 menuItems = navMenu.find('a'),
                 // Anchors corresponding to menu items
