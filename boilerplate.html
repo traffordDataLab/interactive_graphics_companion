@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <!-- import the required JavaScript libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
-</head>
-<body>
+<html lang="en-GB">
+    <head>
+        <!-- import the required JavaScript libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
 
-  <div id="vis"></div>
-
-  <script type="text/javascript">
-    // Parse Vega specifications using Vega-Embed
-    vegaEmbed('#vis', "src/bar_labels.vl.json", {defaultStyle: true}).catch(console.warn);
-  </script>
-</body>
+        <style>
+            /* styling for the Vega-Lite container */
+            #vis {
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Vega-Lite Embed Template</h1>
+            <div id="vis"></div>
+            <script>
+                // Parse Vega specifications using Vega-Embed
+                vegaEmbed('#vis', "src/bar_labels.vl.json", {defaultStyle: true}).catch(console.warn);
+            </script>
+        </main>
+    </body>
 </html>
